@@ -7,17 +7,17 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
 
 <style>
   :root{
-    --beige: #f3ece1;
-    --beige-dark: #e7dcc9;
+    --beige: #f2f2f0;
+    --beige-dark: #e4e4e2;
     --white: #ffffff;
-    --text: #2b2a26;
-    --text-soft: #6f6a5f;
-    --accent: #8a7a5c;
-    --border: #ddd2bd;
+    --text: #2b2b2b;
+    --text-soft: #6b6b6b;
+    --accent: #7a7a7a;
+    --border: #d9d9d7;
     --radius: 18px;
   }
 
@@ -27,7 +27,7 @@
 
   body{
     margin: 0;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Inter', sans-serif;
     background: var(--beige);
     color: var(--text);
   }
@@ -80,6 +80,28 @@
   nav a:hover{
     background: var(--white);
     border-color: var(--border);
+  }
+
+  .burger{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--white);
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .burger span{
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: var(--text);
   }
 
   /* ===== ГЛАВНЫЙ ЭКРАН (HERO) ===== */
@@ -174,12 +196,16 @@
   .case-info{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 14px;
+    padding: 8px;
   }
 
   .case-info .field{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2px;
   }
 
@@ -254,8 +280,27 @@
 
   @media (max-width: 720px){
     .case{ grid-template-columns: 1fr; }
-    header .wrap{ flex-direction: column; height: auto; padding: 16px 20px; gap: 12px; }
+    header .wrap{ height: 72px; padding: 0 20px; position: relative; }
     .section-title{ font-size: 30px; }
+
+    .burger{ display: flex; }
+
+    nav{
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 4px;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 20px 16px;
+    }
+
+    nav.open{ display: flex; }
+
+    nav a{ text-align: center; }
   }
 </style>
 </head>
@@ -265,11 +310,16 @@
 <header>
   <div class="wrap">
     <div class="logo">Даша Фокина</div>
-    <nav>
+    <nav id="nav">
       <a href="#creative">Креатив</a>
       <a href="#strategy">Стратегии</a>
       <a href="#contacts">Обо мне</a>
     </nav>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 </header>
 
@@ -341,14 +391,14 @@
 <section class="landing wrap" id="strategy">
   <h2 class="section-title">Стратегия</h2>
 
-  <div class="case">
+  <a href="strategy-case-1.html" class="case">
     <div class="case-info">
       <div class="field"><span class="label">Инсайт</span><span class="value">—</span></div>
       <div class="field"><span class="label">Идея</span><span class="value">—</span></div>
       <div class="field"><span class="label">Решение</span><span class="value">—</span></div>
     </div>
     <div class="case-body">Кейс 1</div>
-  </div>
+  </a>
 
   <div class="case">
     <div class="case-info">
