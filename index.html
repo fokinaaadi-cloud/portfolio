@@ -45,7 +45,7 @@
     position: sticky;
     top: 0;
     z-index: 50;
-    background: rgba(243,236,225,0.9);
+    background: rgba(242,242,240,0.9);
     backdrop-filter: blur(6px);
     border-bottom: 1px solid var(--border);
   }
@@ -108,41 +108,23 @@
   .hero{
     min-height: calc(100vh - 84px);
     display: flex;
-    flex-direction: column;
+  }
+
+  /* левая половина ведёт в Креатив, правая — в Стратегию; кликабельна вся половина экрана */
+  .hero-half{
+    flex: 1 1 50%;
+    display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 60px 32px;
-    gap: 56px;
+    transition: background 0.2s ease;
   }
 
-  .hero-buttons{
-    display: flex;
-    gap: 16px;
-  }
-
-  .hero-btn{
-    padding: 16px 36px;
-    border-radius: 999px;
-    background: var(--white);
-    border: 1px solid var(--border);
-    font-weight: 700;
-    font-size: 16px;
-    cursor: default; /* пока без функционала — просто заглушка */
+  .hero-half:hover{
+    background: var(--beige-dark);
   }
 
   /* два "стула" — заглушки, замени на свои PNG (см. комментарий в HTML ниже) */
-  .chairs{
-    display: flex;
-    gap: 48px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .chair-link{
-    display: block;
-  }
-
   .chair{
     width: 220px;
     height: 320px;
@@ -283,6 +265,9 @@
     header .wrap{ height: 72px; padding: 0 20px; position: relative; }
     .section-title{ font-size: 30px; }
 
+    .hero{ flex-direction: column; }
+    .hero-half{ padding: 40px 20px; }
+
     .burger{ display: flex; }
 
     nav{
@@ -326,33 +311,26 @@
 <!-- ===== ГЛАВНЫЙ ЭКРАН ===== -->
 <section class="hero">
 
-  <!-- кнопки пока без функционала (заглушка) -->
-  <div class="hero-buttons">
-    <div class="hero-btn">Креатив</div>
-    <div class="hero-btn">Стратегия</div>
-  </div>
-
   <!--
     "Два стула" — сейчас заглушки. Чтобы поставить свои PNG:
     1) положи файлы в папку images/ (например images/chair-creative.png и images/chair-strategy.png)
     2) в блоке ниже замени <div class="chair">...</div> на:
        <img src="images/chair-creative.png" alt="Креатив" class="chair" style="border:none; object-fit:contain; padding:0;">
     Ссылки #creative и #strategy уже ведут на нужные блоки лендинга ниже.
+    Кликабельна вся половина экрана (левая — Креатив, правая — Стратегия), не только сама картинка.
   -->
-  <div class="chairs">
-    <a href="#creative" class="chair-link">
-      <div class="chair">
-        <span class="title">Креатив</span>
-        <span class="hint">сюда встанет PNG «стул», ссылка уже работает</span>
-      </div>
-    </a>
-    <a href="#strategy" class="chair-link">
-      <div class="chair">
-        <span class="title">Стратегия</span>
-        <span class="hint">сюда встанет PNG «стул», ссылка уже работает</span>
-      </div>
-    </a>
-  </div>
+  <a href="#creative" class="hero-half">
+    <div class="chair">
+      <span class="title">Креатив</span>
+      <span class="hint">сюда встанет PNG «стул», ссылка уже работает</span>
+    </div>
+  </a>
+  <a href="#strategy" class="hero-half">
+    <div class="chair">
+      <span class="title">Стратегия</span>
+      <span class="hint">сюда встанет PNG «стул», ссылка уже работает</span>
+    </div>
+  </a>
 
 </section>
 
