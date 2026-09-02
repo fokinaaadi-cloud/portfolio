@@ -231,6 +231,68 @@
     font-size: 14px;
   }
 
+  /* ===== СТРУКТУРА КРЕАТИВНОГО КЕЙСА ===== */
+  .case-title{
+    margin: 0;
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  .case-idea{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    background: var(--beige);
+    border-radius: calc(var(--radius) - 6px);
+    padding: 16px 20px;
+  }
+
+  .case-idea p{
+    margin: 0;
+    font-size: 19px;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 1.35;
+  }
+
+  .case-slogan{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .case-slogan p{
+    margin: 0;
+    font-size: 15px;
+    font-style: italic;
+    color: var(--text-soft);
+  }
+
+  .case-slogan p::before{ content: '«'; }
+  .case-slogan p::after{ content: '»'; }
+
+  .case-good{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    border-top: 1px solid var(--border);
+    padding-top: 16px;
+    margin-top: 4px;
+  }
+
+  .case-good p{
+    margin: 0;
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.5;
+  }
+
   /* ===== ПОДВАЛ (FOOTER / КОНТАКТЫ) ===== */
   footer{
     background: var(--beige-dark);
@@ -362,27 +424,95 @@
 
   <div class="case">
     <div class="case-info">
-      <div class="field"><span class="label">Инсайт</span><span class="value">—</span></div>
-      <div class="field"><span class="label">Идея</span><span class="value">—</span></div>
-      <div class="field"><span class="label">Решение</span><span class="value">—</span></div>
+      <h3 class="case-title">Бренд — название идеи (Кейс 1)</h3>
+
+      <div class="field">
+        <span class="label">Задача</span>
+        <span class="value">—</span>
+      </div>
+
+      <div class="field">
+        <span class="label">Наблюдение</span>
+        <span class="value">—</span>
+      </div>
+
+      <div class="case-idea">
+        <span class="label">Идея</span>
+        <p>—</p>
+      </div>
+
+      <!-- Слоган есть у этого кейса. Если у кейса нет слогана — просто удали блок .case-slogan целиком -->
+      <div class="case-slogan">
+        <span class="label">Слоган</span>
+        <p>—</p>
+      </div>
+
+      <div class="case-good">
+        <span class="label">Что хорошего?</span>
+        <p>—</p>
+      </div>
     </div>
     <div class="case-body">Кейс 1</div>
   </div>
 
   <div class="case">
     <div class="case-info">
-      <div class="field"><span class="label">Инсайт</span><span class="value">—</span></div>
-      <div class="field"><span class="label">Идея</span><span class="value">—</span></div>
-      <div class="field"><span class="label">Решение</span><span class="value">—</span></div>
+      <h3 class="case-title">Бренд — название идеи (Кейс 2)</h3>
+
+      <div class="field">
+        <span class="label">Задача</span>
+        <span class="value">—</span>
+      </div>
+
+      <div class="field">
+        <span class="label">Наблюдение</span>
+        <span class="value">—</span>
+      </div>
+
+      <div class="case-idea">
+        <span class="label">Идея</span>
+        <p>—</p>
+      </div>
+
+      <!-- У этого кейса нет слогана, поэтому блок .case-slogan не рендерится -->
+
+      <div class="case-good">
+        <span class="label">Что хорошего?</span>
+        <p>—</p>
+      </div>
     </div>
     <div class="case-body">Кейс 2</div>
   </div>
 
   <div class="case">
     <div class="case-info">
-      <div class="field"><span class="label">Инсайт</span><span class="value">—</span></div>
-      <div class="field"><span class="label">Идея</span><span class="value">—</span></div>
-      <div class="field"><span class="label">Решение</span><span class="value">—</span></div>
+      <h3 class="case-title">Бренд — название идеи (Кейс 3)</h3>
+
+      <div class="field">
+        <span class="label">Задача</span>
+        <span class="value">—</span>
+      </div>
+
+      <div class="field">
+        <span class="label">Наблюдение</span>
+        <span class="value">—</span>
+      </div>
+
+      <div class="case-idea">
+        <span class="label">Идея</span>
+        <p>—</p>
+      </div>
+
+      <!-- Слоган есть у этого кейса. Если у кейса нет слогана — просто удали блок .case-slogan целиком -->
+      <div class="case-slogan">
+        <span class="label">Слоган</span>
+        <p>—</p>
+      </div>
+
+      <div class="case-good">
+        <span class="label">Что хорошего?</span>
+        <p>—</p>
+      </div>
     </div>
     <div class="case-body">Кейс 3</div>
   </div>
