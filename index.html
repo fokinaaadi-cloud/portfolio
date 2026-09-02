@@ -275,6 +275,20 @@
     line-height: 1.5;
   }
 
+  .case-note{
+    width: 100%;
+    border-top: 1px dashed var(--border);
+    padding-top: 16px;
+    margin-top: 4px;
+  }
+
+  .case-note p{
+    margin: 0;
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text-soft);
+  }
+
   /* ===== ПОДВАЛ (FOOTER / КОНТАКТЫ) ===== */
   footer{
     background: var(--beige-dark);
@@ -402,32 +416,32 @@
 
   <div class="case">
     <div class="case-info">
-      <h3 class="case-title">Бренд — название идеи (Кейс 1)</h3>
+      <h3 class="case-title">Grandorf — большая идея для бренда премиальных кормов</h3>
 
       <div class="field">
         <span class="label">Задача</span>
-        <span class="value">—</span>
+        <span class="value">Grandorf впервые коммуницирует на широкую аудиторию. Важно выделиться и закрепить за собой холистик (чистый) состав.</span>
       </div>
 
       <div class="field">
         <span class="label">Наблюдение</span>
-        <span class="value">—</span>
+        <span class="value">Ключ к дифференциации — в ДНК бренда, в честности. Она в чистом составе и даже в дизайне пачки, где Grandorf показывает ингредиенты состава, а не кошек и собак.</span>
       </div>
 
       <div class="case-idea">
         <span class="label">Идея</span>
-        <p>—</p>
+        <p>Честно вынести состав на первый план и поменять правила коммуникации в категории. Минимализм здесь — сам по себе eye-catcher.</p>
       </div>
 
       <!-- Слоган есть у этого кейса. Если у кейса нет слогана — просто удали блок .case-slogan целиком -->
       <div class="case-slogan">
         <span class="label">Слоган</span>
-        <p>—</p>
+        <p>Любовь без лишних слов</p>
       </div>
 
       <div class="case-good">
         <span class="label">Что хорошего?</span>
-        <p>—</p>
+        <p>Идея работает на первом этапе воронки — построении знания бренда: закрепляет ключевое преимущество и легко адаптируется под любой SKU. Дальше слоган может стать мостиком к более эмоциональной коммуникации, сохраняя преемственность идеи.</p>
       </div>
     </div>
     <div class="case-body">Кейс 1</div>
@@ -435,28 +449,32 @@
 
   <div class="case">
     <div class="case-info">
-      <h3 class="case-title">Бренд — название идеи (Кейс 2)</h3>
+      <h3 class="case-title">Burger King × PUBG — идея спецпроекта</h3>
 
       <div class="field">
         <span class="label">Задача</span>
-        <span class="value">—</span>
+        <span class="value">Сохранить пищевые привычки зумеров на фоне растущего тренда на ЗОЖ.</span>
       </div>
 
       <div class="field">
         <span class="label">Наблюдение</span>
-        <span class="value">—</span>
+        <span class="value">Геймер тратит 200 калорий за час игры — калории бургера сжигаются за 3 часа игры.</span>
       </div>
 
       <div class="case-idea">
         <span class="label">Идея</span>
-        <p>—</p>
+        <p>Воппер от PUBG на 0 калорий: чтобы тренировка проходила активнее, за каждый воппер — бандл в игре на 3 часа.</p>
       </div>
 
-      <!-- У этого кейса нет слогана, поэтому блок .case-slogan не рендерится -->
+      <!-- Слоган есть у этого кейса. Если у кейса нет слогана — просто удали блок .case-slogan целиком -->
+      <div class="case-slogan">
+        <span class="label">Слоган</span>
+        <p>I'm burning it</p>
+      </div>
 
       <div class="case-good">
         <span class="label">Что хорошего?</span>
-        <p>—</p>
+        <p>Отработали территорию огня, укрепили лояльность геймеров и доказали, что киберспорт — это тоже спорт.</p>
       </div>
     </div>
     <div class="case-body">Кейс 2</div>
@@ -464,35 +482,101 @@
 
   <div class="case">
     <div class="case-info">
-      <h3 class="case-title">Бренд — название идеи (Кейс 3)</h3>
+      <h3 class="case-title">А-Деньги — идея мероприятия (Альфа-Банк)</h3>
 
       <div class="field">
         <span class="label">Задача</span>
-        <span class="value">—</span>
+        <span class="value">Провести летнее мероприятие для сотрудников на открытой площадке.</span>
       </div>
 
       <div class="field">
         <span class="label">Наблюдение</span>
-        <span class="value">—</span>
+        <span class="value">В 2025 году вывезти сотрудников заграницу — задача не из простых.</span>
       </div>
 
       <div class="case-idea">
         <span class="label">Идея</span>
-        <p>—</p>
+        <p>Организовать «Тур де Финанс» и посетить пять стран не покидая Москву.</p>
+        <p>Разделили всю площадку на страны: Турция, Германия, Марокко, Италия и Бразилия. Продумали паспорт участника, мерч, декор в стилистике мероприятия.</p>
+      </div>
+
+      <!-- У этого кейса нет слогана, поэтому блок .case-slogan не рендерится -->
+
+      <div class="case-good">
+        <span class="label">Что хорошего?</span>
+        <p>Учли актуальный запрос аудитории на путешествия и связали его с финансовой специализацией компании.</p>
+      </div>
+    </div>
+    <div class="case-body">Кейс 3</div>
+  </div>
+
+  <div class="case">
+    <div class="case-info">
+      <h3 class="case-title">Альфа-Банк — идея социального проекта</h3>
+
+      <div class="field">
+        <span class="label">Задача</span>
+        <span class="value">Разработать идею социального проекта в поддержку фонда бездомных животных.</span>
+      </div>
+
+      <div class="field">
+        <span class="label">Наблюдение</span>
+        <span class="value">Для банковских продуктов многие в качестве кодового слова используют имена своих питомцев. У животных в приюте имя часто есть — но кодовым словом оно не станет, потому что нет хозяина.</span>
+      </div>
+
+      <div class="case-idea">
+        <span class="label">Идея</span>
+        <p>Альфа-Банк выпускает дебетовые карты, где кодовое слово — имя животного из приюта. Кэшбек с карты идёт на его содержание.</p>
+      </div>
+
+      <!-- У этого кейса нет слогана, поэтому блок .case-slogan не рендерится -->
+
+      <div class="case-good">
+        <span class="label">Что хорошего?</span>
+        <p>Чем больше человек вкладывается в питомца, тем крепче привязанность — и тем выше шанс, что он захочет стать его хозяином.</p>
+      </div>
+
+      <!-- Личная заметка — необязательный блок, только у этого кейса. Если её нет, .case-note просто не добавляется -->
+      <div class="case-note">
+        <span class="label">От Даши</span>
+        <p>Я люблю эту идею. Мелочь, но так важно быть чьим-то кодовым словом.</p>
+      </div>
+    </div>
+    <div class="case-body">Кейс 4</div>
+  </div>
+
+  <div class="case">
+    <div class="case-info">
+      <h3 class="case-title">ВК Простор — Паспорт креатора</h3>
+
+      <div class="field">
+        <span class="label">Задача</span>
+        <span class="value">Привлечь и удержать начинающих креаторов на обучающей платформе ВК Простор.</span>
+      </div>
+
+      <div class="field">
+        <span class="label">Наблюдение</span>
+        <span class="value">Начинающие креаторы забрасывают начатое, потому что обнуляют результаты, не видят прогресса и прокрастинируют, когда дело доходит до портфолио.</span>
+      </div>
+
+      <div class="case-idea">
+        <span class="label">Идея</span>
+        <p>Создать систему идентификации креаторов, где фиксируются все достижения.</p>
+        <p>Мы разработали паспорт креатора, придумали «Первую легальную утечку талантов» — разворот паспорта креатора на медиаэкране в Москва-Сити, а ещё закрытые просторные тендеры, спецпроект с hh.ru, баннерную рекламу и другие активации.</p>
       </div>
 
       <!-- Слоган есть у этого кейса. Если у кейса нет слогана — просто удали блок .case-slogan целиком -->
       <div class="case-slogan">
         <span class="label">Слоган</span>
-        <p>—</p>
+        <p>У каждого креатора должна быть IDea</p>
       </div>
 
       <div class="case-good">
         <span class="label">Что хорошего?</span>
-        <p>—</p>
+        <p>Паспорт Простора в будущем может брендировать всю креативную индустрию и стать единым документом для каждого креатора в России.</p>
       </div>
     </div>
-    <div class="case-body">Кейс 3</div>
+    <div class="case-body">Кейс 5</div>
   </div>
 </section>
 
