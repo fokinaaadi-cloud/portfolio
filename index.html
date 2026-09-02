@@ -224,9 +224,22 @@
   }
 
   .case-title{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
     margin: 0;
+  }
+
+  .case-title-brand{
     font-size: 17px;
     font-weight: 800;
+    line-height: 1.25;
+  }
+
+  .case-title-format{
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text-soft);
     line-height: 1.25;
   }
 
@@ -425,7 +438,10 @@
 
   <div class="case">
     <div class="case-info">
-      <h3 class="case-title">Grandorf — большая идея для бренда премиальных кормов</h3>
+      <h3 class="case-title">
+        <span class="case-title-brand">Grandorf</span>
+        <span class="case-title-format">Большая идея</span>
+      </h3>
 
       <div class="field">
         <span class="label">Задача</span>
@@ -458,7 +474,10 @@
 
   <div class="case">
     <div class="case-info">
-      <h3 class="case-title">Burger King × PUBG — идея спецпроекта</h3>
+      <h3 class="case-title">
+        <span class="case-title-brand">Burger King × PUBG</span>
+        <span class="case-title-format">Идея спецпроекта</span>
+      </h3>
 
       <div class="field">
         <span class="label">Задача</span>
@@ -491,7 +510,10 @@
 
   <div class="case">
     <div class="case-info">
-      <h3 class="case-title">А-Деньги — идея мероприятия (Альфа-Банк)</h3>
+      <h3 class="case-title">
+        <span class="case-title-brand">А-Деньги</span>
+        <span class="case-title-format">Идея мероприятия (Альфа-Банк)</span>
+      </h3>
 
       <div class="field">
         <span class="label">Задача</span>
@@ -521,7 +543,10 @@
 
   <div class="case">
     <div class="case-info">
-      <h3 class="case-title">Альфа-Банк — идея социального проекта</h3>
+      <h3 class="case-title">
+        <span class="case-title-brand">Альфа-Банк</span>
+        <span class="case-title-format">Идея социального проекта</span>
+      </h3>
 
       <div class="field">
         <span class="label">Задача</span>
@@ -556,7 +581,10 @@
 
   <div class="case">
     <div class="case-info">
-      <h3 class="case-title">ВК Простор — Паспорт креатора</h3>
+      <h3 class="case-title">
+        <span class="case-title-brand">ВК Простор</span>
+        <span class="case-title-format">Продуктовая идея</span>
+      </h3>
 
       <div class="field">
         <span class="label">Задача</span>
