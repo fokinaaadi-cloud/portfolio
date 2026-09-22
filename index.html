@@ -519,27 +519,6 @@
     margin-bottom: 8px;
   }
 
-  .footer-block-wide{
-    grid-column: 1 / -1;
-  }
-
-  .footer-worked-row{
-    display: flex;
-    align-items: flex-start;
-    gap: 32px;
-    flex-wrap: wrap;
-  }
-
-  .footer-worked-row > p{
-    flex: 1 1 300px;
-    margin: 0;
-  }
-
-  .footer-worked-row > .footer-note-card{
-    flex: 0 0 auto;
-    margin: 0;
-  }
-
   .footer-label{
     display: block;
     font-size: 11px;
@@ -552,7 +531,7 @@
 
   .footer-note-card{
     position: relative;
-    width: 460px;
+    width: 640px;
     max-width: 100%;
     border-radius: 4px;
     margin: 12px 0 20px;
@@ -570,16 +549,16 @@
   .footer-note-content{
     position: relative;
     z-index: 1;
-    padding: 44px 34px 30px;
+    padding: 72px 64px 56px;
   }
 
   .footer-ps{
     display: block;
     font-family: 'Gogol', cursive;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 26px;
     color: var(--idea-blue);
-    margin-bottom: 8px;
+    margin-bottom: 10px;
   }
 
   .footer-note-content p{
@@ -713,7 +692,6 @@
     .case-context{ grid-template-columns: 1fr; }
     .footer-intro{ grid-template-columns: 1fr; }
     .footer-columns{ grid-template-columns: 1fr; }
-    .footer-worked-row > p{ flex-basis: 100%; }
     header .wrap{ height: 72px; padding: 0 20px; position: relative; }
     .section-title{ font-size: 30px; }
     .coming-grid{ grid-template-columns: repeat(2, 1fr); }
@@ -1104,18 +1082,16 @@
             </ul>
           </div>
 
-          <div class="footer-block footer-block-wide">
+          <div class="footer-block">
             <span class="footer-label">С кем работала</span>
-            <div class="footer-worked-row">
-              <p><strong>Мне повезло</strong> поработать с множеством классных брендов из разных отраслей: hh.ru, Flowwow, Авито, М.Видео, Мотив, Индилайт, Точка Банк, TBC Банк, Sela, Вкусно — и точка, Мистраль, OLX, разные бренды недвижимости и другие.</p>
-              <div class="footer-note-card">
-                <img src="images/sticky-note.png" alt="" class="footer-note-bg">
-                <div class="footer-note-content">
-                  <span class="footer-ps">P.S.</span>
-                  <p>Я люблю рекламу и не торгуюсь, когда пишу это.</p>
-                  <p>Ненависть или равнодушие к ней сейчас понятны. Я же хочу радости. Чтобы реклама понимала нечто важное под скелетом человека.</p>
-                  <p>Я хочу помогать брендам находить слова.</p>
-                </div>
+            <p><strong>Мне повезло</strong> поработать с множеством классных брендов из разных отраслей: hh.ru, Flowwow, Авито, М.Видео, Мотив, Индилайт, Точка Банк, TBC Банк, Sela, Вкусно — и точка, Мистраль, OLX, разные бренды недвижимости и другие.</p>
+            <div class="footer-note-card">
+              <img src="images/sticky-note.png" alt="" class="footer-note-bg">
+              <div class="footer-note-content">
+                <span class="footer-ps">P.S.</span>
+                <p>Я люблю рекламу и не торгуюсь, когда пишу это.</p>
+                <p>Ненависть или равнодушие к ней сейчас понятны. Я же хочу радости. Чтобы реклама понимала нечто важное под скелетом человека.</p>
+                <p>Я хочу помогать брендам находить слова.</p>
               </div>
             </div>
           </div>
