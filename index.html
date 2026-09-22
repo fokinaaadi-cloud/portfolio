@@ -19,6 +19,7 @@
     --accent: #7a7a7a;
     --border: #d9d9d7;
     --radius: 18px;
+    --idea-blue: #2255cc;
   }
 
   * { box-sizing: border-box; }
@@ -121,10 +122,10 @@
 
   .hero-heading{
     display: block;
-    width: 320px;
-    max-width: 70vw;
+    width: 220px;
+    max-width: 55vw;
     height: auto;
-    margin: 16px auto 12px;
+    margin: 12px auto 2px;
   }
 
   .hero-row{
@@ -295,20 +296,14 @@
   }
 
   .case-idea{
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 8px;
     padding: 20px 22px;
-  }
-
-  .case-idea .doodle-frame{
-    position: absolute;
-    inset: -6px;
-    width: calc(100% + 12px);
-    height: calc(100% + 12px);
-    pointer-events: none;
+    background: var(--white);
+    border: 2px solid var(--idea-blue);
+    border-radius: calc(var(--radius) - 6px);
   }
 
   .case-idea p{
@@ -356,20 +351,6 @@
     font-size: 13px;
     color: var(--text);
     line-height: 1.3;
-  }
-
-  .case-good .label{
-    position: relative;
-    display: inline-block;
-  }
-
-  .case-good .label .doodle-underline{
-    position: absolute;
-    left: -6%;
-    width: 112%;
-    height: auto;
-    bottom: -10px;
-    pointer-events: none;
   }
 
   .case-meta{
@@ -718,9 +699,7 @@
     </div>
 
     <div class="case-highlight">
-      <div class="case-idea">
-        <img src="images/doodle-frame.png" alt="" class="doodle-frame">
-        <span class="label">Идея</span>
+      <div class="case-idea">        <span class="label">Идея</span>
         <p>Честно вынести состав на первый план и поменять правила коммуникации в категории. Минимализм здесь — сам по себе eye-catcher.</p>
 
         <!-- Слоган есть у этого кейса. Если у кейса нет слогана — просто удали блок .case-slogan целиком -->
@@ -737,7 +716,7 @@
     </div>
 
     <div class="case-good">
-      <span class="label">Что хорошего?<img src="images/doodle-underline.png" alt="" class="doodle-underline"></span>
+      <span class="label">Что хорошего?</span>
       <p>Идея работает на первом этапе воронки — строит знание и закрепляет ключевое преимущество, легко адаптируется под любой SKU. Дальше слоган может стать мостиком к более эмоциональной коммуникации, при этом сохранить преемственность идеи.</p>
     </div>
   </div>
@@ -761,9 +740,7 @@
     </div>
 
     <div class="case-highlight">
-      <div class="case-idea">
-        <img src="images/doodle-frame.png" alt="" class="doodle-frame">
-        <span class="label">Идея</span>
+      <div class="case-idea">        <span class="label">Идея</span>
         <p>Воппер от PUBG на 0 калорий: чтобы тренировка проходила активнее, за каждый воппер — бандл в игре на 3 часа.</p>
 
         <!-- Слоган есть у этого кейса. Если у кейса нет слогана — просто удали блок .case-slogan целиком -->
@@ -779,7 +756,7 @@
     </div>
 
     <div class="case-good">
-      <span class="label">Что хорошего?<img src="images/doodle-underline.png" alt="" class="doodle-underline"></span>
+      <span class="label">Что хорошего?</span>
       <p>Отработали территорию огня, укрепили лояльность геймеров и доказали, что киберспорт — это тоже спорт.</p>
     </div>
   </div>
@@ -803,9 +780,7 @@
     </div>
 
     <div class="case-highlight">
-      <div class="case-idea">
-        <img src="images/doodle-frame.png" alt="" class="doodle-frame">
-        <span class="label">Идея</span>
+      <div class="case-idea">        <span class="label">Идея</span>
         <p>Организовать «Тур де Финанс» и посетить пять стран не покидая Москву.</p>
         <!-- У этого кейса нет слогана, поэтому блок .case-slogan не рендерится -->
       </div>
@@ -814,7 +789,7 @@
     </div>
 
     <div class="case-good">
-      <span class="label">Что хорошего?<img src="images/doodle-underline.png" alt="" class="doodle-underline"></span>
+      <span class="label">Что хорошего?</span>
       <p>Связали запрос на путешествия с финансовой специализацией компании.</p>
       <p>Разделили всю площадку на страны: Турция, Германия, Марокко, Италия и Бразилия. Продумали паспорт участника, мерч, декор в стилистике мероприятия.</p>
     </div>
@@ -846,9 +821,7 @@
     </div>
 
     <div class="case-highlight">
-      <div class="case-idea">
-        <img src="images/doodle-frame.png" alt="" class="doodle-frame">
-        <span class="label">Идея</span>
+      <div class="case-idea">        <span class="label">Идея</span>
         <p>Лимитированные карты, где кодовое слово — имя животного из приюта. Кэшбек по карте идёт на его содержание.</p>
         <!-- У этого кейса нет слогана, поэтому блок .case-slogan не рендерится -->
       </div>
@@ -859,7 +832,7 @@
     </div>
 
     <div class="case-good">
-      <span class="label">Что хорошего?<img src="images/doodle-underline.png" alt="" class="doodle-underline"></span>
+      <span class="label">Что хорошего?</span>
       <p>Чем больше человек вкладывается в питомца, тем крепче привязанность — и тем выше шанс, что он захочет стать его хозяином.</p>
     </div>
 
@@ -889,9 +862,7 @@
     </div>
 
     <div class="case-highlight">
-      <div class="case-idea">
-        <img src="images/doodle-frame.png" alt="" class="doodle-frame">
-        <span class="label">Идея</span>
+      <div class="case-idea">        <span class="label">Идея</span>
         <p>Создать систему идентификации креаторов, где фиксируются все достижения.</p>
         <p class="case-idea-detail">Разработали паспорт креатора, придумали «Первую легальную утечку талантов» — разворот паспорта креатора на медиаэкране в Москва-Сити, а ещё закрытые просторные тендеры, спецпроект с hh.ru, баннерную рекламу и другие активации.</p>
 
@@ -909,7 +880,7 @@
     </div>
 
     <div class="case-good">
-      <span class="label">Что хорошего?<img src="images/doodle-underline.png" alt="" class="doodle-underline"></span>
+      <span class="label">Что хорошего?</span>
       <p>Паспорт Простора в будущем может брендировать всю креативную индустрию и стать единым документом для каждого креатора в России.</p>
     </div>
   </div>
@@ -947,9 +918,7 @@
     </div>
 
     <div class="case-highlight">
-      <div class="case-idea">
-        <img src="images/doodle-frame.png" alt="" class="doodle-frame">
-        <span class="label">Решение</span>
+      <div class="case-idea">        <span class="label">Решение</span>
         <p>Тест-драйв профессий в формате стримов.</p>
         <p class="case-idea-detail">Стримеры управляют реальными специалистами на рабочих местах — как персонажем в игре, но в реальной жизни. Зрители не просто смотрят стрим — они проживают первый рабочий опыт в управляемом формате.</p>
       </div>
@@ -960,7 +929,7 @@
     </div>
 
     <div class="case-good">
-      <span class="label">Что хорошего?<img src="images/doodle-underline.png" alt="" class="doodle-underline"></span>
+      <span class="label">Что хорошего?</span>
       <p>Эфиры получили моментальный отклик, а сразу после завершения проект разлетелся по соцсетям фанатскими нарезками самых смешных моментов — и продолжил собирать охват уже без нашего участия.</p>
     </div>
 
