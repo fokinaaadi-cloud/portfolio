@@ -193,19 +193,25 @@
     margin-bottom: 18px;
   }
 
-  /* ===== ГРУППИРОВКА 2×2: (Задача+Наблюдение / Идея+Слоган) сверху, (Что хорошего / Материалы) снизу ===== */
-  .case-grid{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px 28px;
-    align-items: start;
-    margin-top: 14px;
+  /* ===== Задача/Наблюдение — компактный контекст мелким текстом ===== */
+  .case-context{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 32px;
+    margin-top: 10px;
   }
 
-  .case-cell{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  .case-context .field{
+    flex: 1 1 200px;
+  }
+
+  /* ===== Идея + вложение рядом — главный акцент кейса ===== */
+  .case-highlight{
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 20px;
+    align-items: stretch;
+    margin-top: 14px;
   }
 
   .case .field{
@@ -215,15 +221,15 @@
   }
 
   .case .label{
-    font-size: 11px;
+    font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--text-soft);
   }
 
   .case .value{
-    font-size: 13.5px;
-    line-height: 1.4;
+    font-size: 12px;
+    line-height: 1.3;
   }
 
   /* ===== ЕДИНЫЙ ФОРМАТ ВЛОЖЕНИЙ (картинки/видео/заглушка) — без обрезки контента ===== */
@@ -303,8 +309,9 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    padding: 14px 18px;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px 22px;
   }
 
   .case-idea .doodle-frame{
@@ -318,27 +325,28 @@
   .case-idea p{
     position: relative;
     margin: 0;
-    font-size: 16px;
+    font-size: 19px;
     font-weight: 700;
-    line-height: 1.35;
+    line-height: 1.3;
   }
 
   .case-idea p.case-idea-detail{
     font-size: 13px;
     font-weight: 400;
     color: var(--text-soft);
-    line-height: 1.5;
+    line-height: 1.35;
   }
 
   .case-slogan{
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 3px;
   }
 
   .case-slogan p{
     margin: 0;
-    font-size: 13px;
+    font-size: 12px;
+    line-height: 1.3;
     color: var(--text-soft);
   }
 
@@ -349,13 +357,16 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
   }
 
   .case-good p{
     margin: 0;
     font-size: 13px;
     color: var(--text);
-    line-height: 1.45;
+    line-height: 1.3;
   }
 
   .case-good .label{
@@ -387,6 +398,7 @@
   .case-note p{
     margin: 0;
     font-size: 13px;
+    line-height: 1.3;
     color: var(--text-soft);
   }
 
@@ -620,7 +632,7 @@
   }
 
   @media (max-width: 720px){
-    .case-grid{ grid-template-columns: 1fr; }
+    .case-highlight{ grid-template-columns: 1fr; }
     header .wrap{ height: 72px; padding: 0 20px; position: relative; }
     .section-title{ font-size: 30px; }
     .coming-grid{ grid-template-columns: repeat(2, 1fr); }
@@ -704,25 +716,23 @@
       <span class="case-title-format">Большая идея</span>
     </h3>
 
-    <div class="case-grid">
-      <div class="case-cell">
-        <div class="field">
-          <span class="label">Задача</span>
-          <span class="value">Первая реклама бренда: нужно запомниться и закрепить холистик состав.</span>
-        </div>
-
-        <div class="field">
-          <span class="label">Наблюдение</span>
-          <span class="value">Честность — в ДНК бренда: в составе и в самой пачке.</span>
-        </div>
+    <div class="case-context">
+      <div class="field">
+        <span class="label">Задача</span>
+        <span class="value">Первая реклама бренда: нужно запомниться и закрепить холистик состав.</span>
       </div>
 
-      <div class="case-cell">
-        <div class="case-idea">
-          <img src="images/doodle-frame.png" alt="" class="doodle-frame">
-          <span class="label">Идея</span>
-          <p>Честно вынести состав на первый план и поменять правила коммуникации в категории. Минимализм здесь — сам по себе eye-catcher.</p>
-        </div>
+      <div class="field">
+        <span class="label">Наблюдение</span>
+        <span class="value">Честность — в ДНК бренда: в составе и в самой пачке.</span>
+      </div>
+    </div>
+
+    <div class="case-highlight">
+      <div class="case-idea">
+        <img src="images/doodle-frame.png" alt="" class="doodle-frame">
+        <span class="label">Идея</span>
+        <p>Честно вынести состав на первый план и поменять правила коммуникации в категории. Минимализм здесь — сам по себе eye-catcher.</p>
 
         <!-- Слоган есть у этого кейса. Если у кейса нет слогана — просто удали блок .case-slogan целиком -->
         <div class="case-slogan">
@@ -731,19 +741,15 @@
         </div>
       </div>
 
-      <div class="case-cell">
-        <div class="case-good">
-          <span class="label">Что хорошего?<img src="images/doodle-underline.png" alt="" class="doodle-underline"></span>
-          <p>Идея работает на первом этапе воронки — строит знание и закрепляет ключевое преимущество, легко адаптируется под любой SKU. Дальше слоган может стать мостиком к более эмоциональной коммуникации, при этом сохранить преемственность идеи.</p>
-        </div>
+      <div class="case-media case-media-split">
+        <img src="images/case-grandorf-1.png" alt="Макет Grandorf для кошек">
+        <img src="images/case-grandorf-2.png" alt="Макет Grandorf для собак">
       </div>
+    </div>
 
-      <div class="case-cell">
-        <div class="case-media case-media-split">
-          <img src="images/case-grandorf-1.png" alt="Макет Grandorf для кошек">
-          <img src="images/case-grandorf-2.png" alt="Макет Grandorf для собак">
-        </div>
-      </div>
+    <div class="case-good">
+      <span class="label">Что хорошего?<img src="images/doodle-underline.png" alt="" class="doodle-underline"></span>
+      <p>Идея работает на первом этапе воронки — строит знание и закрепляет ключевое преимущество, легко адаптируется под любой SKU. Дальше слоган может стать мостиком к более эмоциональной коммуникации, при этом сохранить преемственность идеи.</p>
     </div>
   </div>
 
@@ -753,25 +759,23 @@
       <span class="case-title-format">Идея спецпроекта</span>
     </h3>
 
-    <div class="case-grid">
-      <div class="case-cell">
-        <div class="field">
-          <span class="label">Задача</span>
-          <span class="value">Сохранить пищевые привычки зумеров на фоне растущего тренда на ЗОЖ.</span>
-        </div>
-
-        <div class="field">
-          <span class="label">Наблюдение</span>
-          <span class="value">Геймер тратит 200 калорий за час игры — калории бургера сжигаются за 3 часа игры.</span>
-        </div>
+    <div class="case-context">
+      <div class="field">
+        <span class="label">Задача</span>
+        <span class="value">Сохранить пищевые привычки зумеров на фоне растущего тренда на ЗОЖ.</span>
       </div>
 
-      <div class="case-cell">
-        <div class="case-idea">
-          <img src="images/doodle-frame.png" alt="" class="doodle-frame">
-          <span class="label">Идея</span>
-          <p>Воппер от PUBG на 0 калорий: чтобы тренировка проходила активнее, за каждый воппер — бандл в игре на 3 часа.</p>
-        </div>
+      <div class="field">
+        <span class="label">Наблюдение</span>
+        <span class="value">Геймер тратит 200 калорий за час игры — калории бургера сжигаются за 3 часа игры.</span>
+      </div>
+    </div>
+
+    <div class="case-highlight">
+      <div class="case-idea">
+        <img src="images/doodle-frame.png" alt="" class="doodle-frame">
+        <span class="label">Идея</span>
+        <p>Воппер от PUBG на 0 калорий: чтобы тренировка проходила активнее, за каждый воппер — бандл в игре на 3 часа.</p>
 
         <!-- Слоган есть у этого кейса. Если у кейса нет слогана — просто удали блок .case-slogan целиком -->
         <div class="case-slogan">
@@ -780,18 +784,14 @@
         </div>
       </div>
 
-      <div class="case-cell">
-        <div class="case-good">
-          <span class="label">Что хорошего?<img src="images/doodle-underline.png" alt="" class="doodle-underline"></span>
-          <p>Отработали территорию огня, укрепили лояльность геймеров и доказали, что киберспорт — это тоже спорт.</p>
-        </div>
+      <div class="case-media">
+        <iframe src="https://www.youtube.com/embed/8H7Iaa_OsLU" title="Burger King × PUBG" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
       </div>
+    </div>
 
-      <div class="case-cell">
-        <div class="case-media">
-          <iframe src="https://www.youtube.com/embed/8H7Iaa_OsLU" title="Burger King × PUBG" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-        </div>
-      </div>
+    <div class="case-good">
+      <span class="label">Что хорошего?<img src="images/doodle-underline.png" alt="" class="doodle-underline"></span>
+      <p>Отработали территорию огня, укрепили лояльность геймеров и доказали, что киберспорт — это тоже спорт.</p>
     </div>
   </div>
 
@@ -801,39 +801,33 @@
       <span class="case-title-format">Идея мероприятия</span>
     </h3>
 
-    <div class="case-grid">
-      <div class="case-cell">
-        <div class="field">
-          <span class="label">Задача</span>
-          <span class="value">Провести летнее мероприятие для сотрудников на открытой площадке.</span>
-        </div>
-
-        <div class="field">
-          <span class="label">Наблюдение</span>
-          <span class="value">В 2025 году вывезти сотрудников заграницу — задача не из простых.</span>
-        </div>
+    <div class="case-context">
+      <div class="field">
+        <span class="label">Задача</span>
+        <span class="value">Провести летнее мероприятие для сотрудников на открытой площадке.</span>
       </div>
 
-      <div class="case-cell">
-        <div class="case-idea">
-          <img src="images/doodle-frame.png" alt="" class="doodle-frame">
-          <span class="label">Идея</span>
-          <p>Организовать «Тур де Финанс» и посетить пять стран не покидая Москву.</p>
-        </div>
+      <div class="field">
+        <span class="label">Наблюдение</span>
+        <span class="value">В 2025 году вывезти сотрудников заграницу — задача не из простых.</span>
+      </div>
+    </div>
+
+    <div class="case-highlight">
+      <div class="case-idea">
+        <img src="images/doodle-frame.png" alt="" class="doodle-frame">
+        <span class="label">Идея</span>
+        <p>Организовать «Тур де Финанс» и посетить пять стран не покидая Москву.</p>
         <!-- У этого кейса нет слогана, поэтому блок .case-slogan не рендерится -->
       </div>
 
-      <div class="case-cell">
-        <div class="case-good">
-          <span class="label">Что хорошего?<img src="images/doodle-underline.png" alt="" class="doodle-underline"></span>
-          <p>Связали запрос на путешествия с финансовой специализацией компании.</p>
-          <p>Разделили всю площадку на страны: Турция, Германия, Марокко, Италия и Бразилия. Продумали паспорт участника, мерч, декор в стилистике мероприятия.</p>
-        </div>
-      </div>
+      <div class="case-media case-media-empty">Скоро добавим визуал</div>
+    </div>
 
-      <div class="case-cell">
-        <div class="case-media case-media-empty">Скоро добавим визуал</div>
-      </div>
+    <div class="case-good">
+      <span class="label">Что хорошего?<img src="images/doodle-underline.png" alt="" class="doodle-underline"></span>
+      <p>Связали запрос на путешествия с финансовой специализацией компании.</p>
+      <p>Разделили всю площадку на страны: Турция, Германия, Марокко, Италия и Бразилия. Продумали паспорт участника, мерч, декор в стилистике мероприятия.</p>
     </div>
 
     <div class="case-meta">
@@ -850,40 +844,34 @@
       <span class="case-title-format">Идея социального проекта</span>
     </h3>
 
-    <div class="case-grid">
-      <div class="case-cell">
-        <div class="field">
-          <span class="label">Задача</span>
-          <span class="value">Разработать идею социального проекта в поддержку фонда бездомных животных.</span>
-        </div>
-
-        <div class="field">
-          <span class="label">Наблюдение</span>
-          <span class="value">Для кодового слово люди часто используют имена своих питомцев. У животных в приюте имя часто есть — но кодовым словом оно не станет, потому что нет хозяина.</span>
-        </div>
+    <div class="case-context">
+      <div class="field">
+        <span class="label">Задача</span>
+        <span class="value">Разработать идею социального проекта в поддержку фонда бездомных животных.</span>
       </div>
 
-      <div class="case-cell">
-        <div class="case-idea">
-          <img src="images/doodle-frame.png" alt="" class="doodle-frame">
-          <span class="label">Идея</span>
-          <p>Лимитированные карты, где кодовое слово — имя животного из приюта. Кэшбек по карте идёт на его содержание.</p>
-        </div>
+      <div class="field">
+        <span class="label">Наблюдение</span>
+        <span class="value">Для кодового слово люди часто используют имена своих питомцев. У животных в приюте имя часто есть — но кодовым словом оно не станет, потому что нет хозяина.</span>
+      </div>
+    </div>
+
+    <div class="case-highlight">
+      <div class="case-idea">
+        <img src="images/doodle-frame.png" alt="" class="doodle-frame">
+        <span class="label">Идея</span>
+        <p>Лимитированные карты, где кодовое слово — имя животного из приюта. Кэшбек по карте идёт на его содержание.</p>
         <!-- У этого кейса нет слогана, поэтому блок .case-slogan не рендерится -->
       </div>
 
-      <div class="case-cell">
-        <div class="case-good">
-          <span class="label">Что хорошего?<img src="images/doodle-underline.png" alt="" class="doodle-underline"></span>
-          <p>Чем больше человек вкладывается в питомца, тем крепче привязанность — и тем выше шанс, что он захочет стать его хозяином.</p>
-        </div>
+      <div class="case-media">
+        <img src="images/case-alfabank-kodslovo.png" alt="Альфа-Банк — карта с кодовым словом">
       </div>
+    </div>
 
-      <div class="case-cell">
-        <div class="case-media">
-          <img src="images/case-alfabank-kodslovo.png" alt="Альфа-Банк — карта с кодовым словом">
-        </div>
-      </div>
+    <div class="case-good">
+      <span class="label">Что хорошего?<img src="images/doodle-underline.png" alt="" class="doodle-underline"></span>
+      <p>Чем больше человек вкладывается в питомца, тем крепче привязанность — и тем выше шанс, что он захочет стать его хозяином.</p>
     </div>
 
     <!-- Личная заметка — необязательный блок, только у этого кейса. Если её нет, .case-note просто не добавляется -->
@@ -899,26 +887,24 @@
       <span class="case-title-format">Идея 360</span>
     </h3>
 
-    <div class="case-grid">
-      <div class="case-cell">
-        <div class="field">
-          <span class="label">Задача</span>
-          <span class="value">Привлечь и удержать начинающих креаторов на ВК Простор.</span>
-        </div>
-
-        <div class="field">
-          <span class="label">Наблюдение</span>
-          <span class="value">Начинающие креаторы сливаются, потому что обнуляют результаты, не видят прогресса и прокрастинируют, когда дело доходит до портфолио.</span>
-        </div>
+    <div class="case-context">
+      <div class="field">
+        <span class="label">Задача</span>
+        <span class="value">Привлечь и удержать начинающих креаторов на ВК Простор.</span>
       </div>
 
-      <div class="case-cell">
-        <div class="case-idea">
-          <img src="images/doodle-frame.png" alt="" class="doodle-frame">
-          <span class="label">Идея</span>
-          <p>Создать систему идентификации креаторов, где фиксируются все достижения.</p>
-          <p class="case-idea-detail">Разработали паспорт креатора, придумали «Первую легальную утечку талантов» — разворот паспорта креатора на медиаэкране в Москва-Сити, а ещё закрытые просторные тендеры, спецпроект с hh.ru, баннерную рекламу и другие активации.</p>
-        </div>
+      <div class="field">
+        <span class="label">Наблюдение</span>
+        <span class="value">Начинающие креаторы сливаются, потому что обнуляют результаты, не видят прогресса и прокрастинируют, когда дело доходит до портфолио.</span>
+      </div>
+    </div>
+
+    <div class="case-highlight">
+      <div class="case-idea">
+        <img src="images/doodle-frame.png" alt="" class="doodle-frame">
+        <span class="label">Идея</span>
+        <p>Создать систему идентификации креаторов, где фиксируются все достижения.</p>
+        <p class="case-idea-detail">Разработали паспорт креатора, придумали «Первую легальную утечку талантов» — разворот паспорта креатора на медиаэкране в Москва-Сити, а ещё закрытые просторные тендеры, спецпроект с hh.ru, баннерную рекламу и другие активации.</p>
 
         <!-- Слоган есть у этого кейса. Если у кейса нет слогана — просто удали блок .case-slogan целиком -->
         <div class="case-slogan">
@@ -927,19 +913,15 @@
         </div>
       </div>
 
-      <div class="case-cell">
-        <div class="case-good">
-          <span class="label">Что хорошего?<img src="images/doodle-underline.png" alt="" class="doodle-underline"></span>
-          <p>Паспорт Простора в будущем может брендировать всю креативную индустрию и стать единым документом для каждого креатора в России.</p>
-        </div>
+      <div class="case-media case-media-split">
+        <img src="images/case-prostor-passport.webp" alt="Паспорт креатора Простора">
+        <img src="images/case-prostor-billboard.webp" alt="Паспорт креатора на медиафасаде в Москва-Сити">
       </div>
+    </div>
 
-      <div class="case-cell">
-        <div class="case-media case-media-split">
-          <img src="images/case-prostor-passport.webp" alt="Паспорт креатора Простора">
-          <img src="images/case-prostor-billboard.webp" alt="Паспорт креатора на медиафасаде в Москва-Сити">
-        </div>
-      </div>
+    <div class="case-good">
+      <span class="label">Что хорошего?<img src="images/doodle-underline.png" alt="" class="doodle-underline"></span>
+      <p>Паспорт Простора в будущем может брендировать всю креативную индустрию и стать единым документом для каждого креатора в России.</p>
     </div>
   </div>
 </section>
@@ -953,50 +935,44 @@
       <span class="case-title-format">Идея спецпроекта</span>
     </h3>
 
-    <div class="case-grid">
-      <div class="case-cell">
-        <div class="field">
-          <span class="label">Задача</span>
-          <span class="value">Донести до молодёжной аудитории, что на hh.ru можно найти подработку, примерить новую роль и прокачаться.</span>
-        </div>
-
-        <div class="field">
-          <span class="label">Аудитория</span>
-          <span class="value">Молодёжь, ядро — 18–24 года.</span>
-        </div>
-
-        <div class="field">
-          <span class="label">Выбор канала</span>
-          <span class="value">Июнь — якорный месяц геймерского календаря.</span>
-        </div>
-
-        <div class="field">
-          <span class="label">Наблюдение</span>
-          <span class="value">Страх неизвестности — главный карьерный барьер для зумеров. А ведь с новыми играми как с новой профролью — лучше один раз самому попробовать и понять, что там внутри интересного (или нет), чем десять раз увидеть описание.</span>
-        </div>
+    <div class="case-context">
+      <div class="field">
+        <span class="label">Задача</span>
+        <span class="value">Донести до молодёжной аудитории, что на hh.ru можно найти подработку, примерить новую роль и прокачаться.</span>
       </div>
 
-      <div class="case-cell">
-        <div class="case-idea">
-          <img src="images/doodle-frame.png" alt="" class="doodle-frame">
-          <span class="label">Решение</span>
-          <p>Тест-драйв профессий в формате стримов.</p>
-          <p class="case-idea-detail">Стримеры управляют реальными специалистами на рабочих местах — как персонажем в игре, но в реальной жизни. Зрители не просто смотрят стрим — они проживают первый рабочий опыт в управляемом формате.</p>
-        </div>
+      <div class="field">
+        <span class="label">Аудитория</span>
+        <span class="value">Молодёжь, ядро — 18–24 года.</span>
       </div>
 
-      <div class="case-cell">
-        <div class="case-good">
-          <span class="label">Что хорошего?<img src="images/doodle-underline.png" alt="" class="doodle-underline"></span>
-          <p>Эфиры получили моментальный отклик, а сразу после завершения проект разлетелся по соцсетям фанатскими нарезками самых смешных моментов — и продолжил собирать охват уже без нашего участия.</p>
-        </div>
+      <div class="field">
+        <span class="label">Выбор канала</span>
+        <span class="value">Июнь — якорный месяц геймерского календаря.</span>
       </div>
 
-      <div class="case-cell">
-        <div class="case-media">
-          <iframe src="https://www.youtube.com/embed/XBQMKPP3R3I" title="HH.ru — тест-драйв профессий" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
-        </div>
+      <div class="field">
+        <span class="label">Наблюдение</span>
+        <span class="value">Страх неизвестности — главный карьерный барьер для зумеров. А ведь с новыми играми как с новой профролью — лучше один раз самому попробовать и понять, что там внутри интересного (или нет), чем десять раз увидеть описание.</span>
       </div>
+    </div>
+
+    <div class="case-highlight">
+      <div class="case-idea">
+        <img src="images/doodle-frame.png" alt="" class="doodle-frame">
+        <span class="label">Решение</span>
+        <p>Тест-драйв профессий в формате стримов.</p>
+        <p class="case-idea-detail">Стримеры управляют реальными специалистами на рабочих местах — как персонажем в игре, но в реальной жизни. Зрители не просто смотрят стрим — они проживают первый рабочий опыт в управляемом формате.</p>
+      </div>
+
+      <div class="case-media">
+        <iframe src="https://www.youtube.com/embed/XBQMKPP3R3I" title="HH.ru — тест-драйв профессий" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="case-good">
+      <span class="label">Что хорошего?<img src="images/doodle-underline.png" alt="" class="doodle-underline"></span>
+      <p>Эфиры получили моментальный отклик, а сразу после завершения проект разлетелся по соцсетям фанатскими нарезками самых смешных моментов — и продолжил собирать охват уже без нашего участия.</p>
     </div>
 
     <div class="case-meta">
