@@ -469,7 +469,8 @@
 
   /* ===== ПОДВАЛ (FOOTER / КОНТАКТЫ) ===== */
   footer{
-    background: var(--beige-dark);
+    background: #141414;
+    color: #b8b8b8;
     padding: 64px 0 40px;
   }
 
@@ -489,11 +490,25 @@
   footer h3{
     font-size: 28px;
     margin: 0 0 8px;
+    color: #ffffff;
+  }
+
+  .footer-intro{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+    margin: 0 0 16px;
+  }
+
+  .footer-intro p{
+    margin: 0;
+    font-size: 19px;
+    line-height: 1.5;
   }
 
   footer p{
     margin: 0 0 16px;
-    color: var(--text-soft);
+    color: #b8b8b8;
   }
 
   footer p:last-of-type{
@@ -501,13 +516,17 @@
   }
 
   footer .footer-about strong{
-    color: var(--text);
+    color: #ffffff;
   }
 
   footer .footer-skills{
     margin: 0 0 16px;
     padding-left: 20px;
-    color: var(--text-soft);
+    color: #b8b8b8;
+  }
+
+  footer .footer-skills strong{
+    color: #ffffff;
   }
 
   footer .footer-skills li{
@@ -518,10 +537,17 @@
     margin-bottom: 0;
   }
 
-  .footer-flyer-wrap{
-    position: relative;
+  .footer-flyer-card{
     display: inline-block;
     margin-top: 20px;
+    padding: 16px;
+    background: var(--beige);
+    border-radius: var(--radius);
+  }
+
+  .footer-flyer-wrap{
+    position: relative;
+    display: block;
     width: 280px;
     max-width: 100%;
   }
@@ -576,7 +602,7 @@
     padding: 6px 14px;
     font-size: 16px;
     font-weight: 700;
-    color: var(--text);
+    color: #ffffff;
   }
 
   .cv-button .doodle-circle{
@@ -603,6 +629,7 @@
 
   @media (max-width: 720px){
     .case-highlight{ grid-template-columns: 1fr; }
+    .footer-intro{ grid-template-columns: 1fr; }
     header .wrap{ height: 72px; padding: 0 20px; position: relative; }
     .section-title{ font-size: 30px; }
     .coming-grid{ grid-template-columns: repeat(2, 1fr); }
@@ -974,27 +1001,31 @@
     <div class="footer-top">
       <div class="footer-about">
         <h3>Обо мне</h3>
-        <p>Даша Фокина, креатор с 3+ летним бэкграундом креативного стратега.</p>
-        <p>Росла в Восходе и Инстинкте, а ещё в MADS, Икре и Высшей школе экономики.</p>
+        <div class="footer-intro">
+          <p>Даша Фокина, креатор с 3+ летним бэкграундом креативного стратега.</p>
+          <p>Росла в Восходе и Инстинкте, а ещё в MADS, Икре и Высшей школе экономики.</p>
+        </div>
         <p><strong>Навыки:</strong></p>
         <ul class="footer-skills">
-          <li>Придумываю рекламные концепции, идеи спецпроектов и кампании 360°.</li>
-          <li>Пишу слоганы, разрабатываю нейминги, люблю слово.</li>
-          <li>Нахожу живые, а порой глупые инсайты.</li>
-          <li>Защищаю и презентую решения — свои и командные.</li>
-          <li>Стратегирую себя и других.</li>
-          <li>Могу быть полезна как бренд-кипер: позиционирование, тональность, бренд-платформы, креативные рамки.</li>
+          <li><strong>Придумываю</strong> рекламные концепции, идеи спецпроектов и кампании 360°.</li>
+          <li><strong>Пишу</strong> слоганы, разрабатываю нейминги, люблю слово.</li>
+          <li><strong>Нахожу</strong> живые, а порой глупые инсайты.</li>
+          <li><strong>Защищаю</strong> и презентую решения — свои и командные.</li>
+          <li><strong>Стратегирую</strong> себя и других.</li>
+          <li><strong>Могу</strong> быть полезна как бренд-кипер: позиционирование, тональность, бренд-платформы, креативные рамки.</li>
         </ul>
         <p>Мне повезло поработать с множеством классных брендов из разных отраслей: hh.ru, Flowwow, Авито, М.Видео, Мотив, Индилайт, Точка Банк, TBC Банк, Sela, Вкусно — и точка, Мистраль, OLX, разные бренды недвижимости и другие.</p>
         <p>Не кривя душой, я люблю рекламу.<br>Хочу, чтобы сказанное имело смысл и радовало человека по другую сторону.</p>
-        <div class="footer-flyer-wrap">
-          <img src="images/footer-flyer.png" alt="Крутая реклама — контакты Даши Фокиной" class="footer-flyer">
-          <a href="tel:+79221413993" class="flyer-hotspot flyer-hotspot-1" aria-label="Позвонить: +7 922 141 39 93"></a>
-          <a href="mailto:fokinaaa.di@gmail.com" class="flyer-hotspot flyer-hotspot-2" aria-label="Написать на почту">
-            <span class="flyer-tooltip">fokinaaa.di@gmail.com</span>
-          </a>
-          <a href="https://t.me/fokinaaa_dasha" target="_blank" rel="noopener" class="flyer-hotspot flyer-hotspot-3" aria-label="Телеграм"></a>
-          <a href="https://www.instagram.com/fokina__dasha?stkn=MWp0dGx6a3NlZ2VkcQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="flyer-hotspot flyer-hotspot-4" aria-label="Инстаграм"></a>
+        <div class="footer-flyer-card">
+          <div class="footer-flyer-wrap">
+            <img src="images/footer-flyer.png" alt="Крутая реклама — контакты Даши Фокиной" class="footer-flyer">
+            <a href="tel:+79221413993" class="flyer-hotspot flyer-hotspot-1" aria-label="Позвонить: +7 922 141 39 93"></a>
+            <a href="mailto:fokinaaa.di@gmail.com" class="flyer-hotspot flyer-hotspot-2" aria-label="Написать на почту">
+              <span class="flyer-tooltip">fokinaaa.di@gmail.com</span>
+            </a>
+            <a href="https://t.me/fokinaaa_dasha" target="_blank" rel="noopener" class="flyer-hotspot flyer-hotspot-3" aria-label="Телеграм"></a>
+            <a href="https://www.instagram.com/fokina__dasha?stkn=MWp0dGx6a3NlZ2VkcQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="flyer-hotspot flyer-hotspot-4" aria-label="Инстаграм"></a>
+          </div>
         </div>
         <div class="cv-button-wrap">
           <a href="https://drive.google.com/file/d/1uU2JAGTTBwD4SdskpKgoDIeEZAe6fkEl/view?usp=sharing" target="_blank" rel="noopener" class="cv-button">
