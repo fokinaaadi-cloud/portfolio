@@ -308,7 +308,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 8px;
-    padding: 20px 22px;
+    padding: 10px 12px;
     background: var(--white);
     border: 2px solid var(--idea-blue);
     border-radius: calc(var(--radius) - 6px);
@@ -529,12 +529,29 @@
     margin-bottom: 10px;
   }
 
-  .footer-ps{
+  .footer-ps-note{
+    position: relative;
+    display: inline-block;
+    width: 92px;
+    margin-bottom: 8px;
+  }
+
+  .footer-ps-note img{
     display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .footer-ps-note .footer-ps{
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-4deg);
     font-family: 'Gogol', cursive;
-    font-size: 26px;
+    font-weight: 700;
+    font-size: 22px;
     color: var(--idea-blue);
-    margin-bottom: 4px;
+    white-space: nowrap;
   }
 
   footer p{
@@ -1049,9 +1066,12 @@
           <div class="footer-block">
             <span class="footer-label">С кем работала</span>
             <p><strong>Мне повезло</strong> поработать с множеством классных брендов из разных отраслей: hh.ru, Flowwow, Авито, М.Видео, Мотив, Индилайт, Точка Банк, TBC Банк, Sela, Вкусно — и точка, Мистраль, OLX, разные бренды недвижимости и другие.</p>
-            <span class="footer-ps">P.S.</span>
+            <div class="footer-ps-note">
+              <img src="images/sticky-note.png" alt="">
+              <span class="footer-ps">P.S.</span>
+            </div>
             <p>Я люблю рекламу и не торгуюсь, когда пишу это.</p>
-            <p>Ненависть или равнодушие к рекламе сейчас понятны. Я же хочу радости. Чтобы реклама понимала нечто важное под скелетом человека.</p>
+            <p>Ненависть или равнодушие к ней сейчас понятны. Я же хочу радости. Чтобы реклама понимала нечто важное под скелетом человека.</p>
             <p>Я хочу помогать брендам находить слова.</p>
           </div>
         </div>
