@@ -187,13 +187,13 @@
 
   .case{
     display: grid;
-    grid-template-columns: 260px 1fr;
-    gap: 40px;
+    grid-template-columns: 240px 1fr;
+    gap: 32px;
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 36px;
-    margin-bottom: 24px;
+    padding: 24px;
+    margin-bottom: 18px;
   }
 
   .case-info{
@@ -201,8 +201,8 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 14px;
-    padding: 8px;
+    gap: 10px;
+    padding: 4px;
   }
 
   .case-info .field{
@@ -213,67 +213,50 @@
   }
 
   .case-info .label{
-    font-size: 12px;
+    font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--text-soft);
   }
 
   .case-info .value{
-    font-size: 15px;
+    font-size: 13.5px;
+    line-height: 1.4;
   }
 
-  .case-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--beige);
-    border-radius: calc(var(--radius) - 6px);
-    min-height: 180px;
-    color: var(--text-soft);
-    font-size: 14px;
-  }
-
-  .case-body-images{
-    align-self: start;
-    align-items: flex-start;
-    gap: 4px;
-    background: transparent;
-  }
-
-  .case-shot{
-    width: 50%;
-    height: auto;
-    display: block;
-    border-radius: calc(var(--radius) - 6px);
-  }
-
-  .case-body-single{
-    align-self: start;
-    background: transparent;
-  }
-
-  .case-shot-full{
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: calc(var(--radius) - 6px);
-  }
-
-  .case-body-video{
+  /* ===== ЕДИНЫЙ ФОРМАТ ВЛОЖЕНИЙ (картинки/видео/заглушка) ===== */
+  .case-media{
     align-self: start;
     width: 100%;
     aspect-ratio: 16 / 9;
-    min-height: 0;
-    padding: 0;
+    border-radius: calc(var(--radius) - 6px);
     overflow: hidden;
+    background: var(--beige);
   }
 
-  .case-body-video iframe{
+  .case-media img,
+  .case-media iframe{
+    display: block;
     width: 100%;
     height: 100%;
+    object-fit: cover;
     border: 0;
-    display: block;
+  }
+
+  .case-media-split{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .case-media-empty{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: var(--text-soft);
+    font-size: 13px;
+    text-align: center;
   }
 
   /* ===== СТРУКТУРА РАЗВЁРНУТОГО КЕЙСА (креатив + детальные кейсы стратегии) ===== */
@@ -301,7 +284,7 @@
   .case-title-brand{
     position: relative;
     display: inline-block;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 800;
     line-height: 1.25;
   }
@@ -328,9 +311,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     width: 100%;
-    padding: 22px 28px;
+    padding: 14px 18px;
   }
 
   .case-idea .doodle-frame{
@@ -344,13 +327,13 @@
   .case-idea p{
     position: relative;
     margin: 0;
-    font-size: 19px;
+    font-size: 16px;
     font-weight: 700;
     line-height: 1.35;
   }
 
   .case-idea p.case-idea-detail{
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 400;
     color: var(--text-soft);
     line-height: 1.5;
@@ -365,7 +348,7 @@
 
   .case-slogan p{
     margin: 0;
-    font-size: 15px;
+    font-size: 13px;
     color: var(--text-soft);
   }
 
@@ -376,18 +359,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 6px;
+    gap: 5px;
     width: 100%;
     border-top: 1px solid var(--border);
-    padding-top: 16px;
-    margin-top: 4px;
+    padding-top: 10px;
+    margin-top: 2px;
   }
 
   .case-good p{
     margin: 0;
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text);
-    line-height: 1.5;
+    line-height: 1.45;
   }
 
   .case-good .label{
@@ -407,13 +390,13 @@
   .case-note{
     width: 100%;
     border-top: 1px dashed var(--border);
-    padding-top: 16px;
-    margin-top: 4px;
+    padding-top: 10px;
+    margin-top: 2px;
   }
 
   .case-note p{
     margin: 0;
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-soft);
   }
 
@@ -759,9 +742,9 @@
         <p>Идея работает на первом этапе воронки — строит знание и закрепляет ключевое преимущество, легко адаптируется под любой SKU. Дальше слоган может стать мостиком к более эмоциональной коммуникации, при этом сохранить преемственность идеи.</p>
       </div>
     </div>
-    <div class="case-body case-body-images">
-      <img src="images/case-grandorf-1.png" alt="Макет Grandorf для кошек" class="case-shot">
-      <img src="images/case-grandorf-2.png" alt="Макет Grandorf для собак" class="case-shot">
+    <div class="case-media case-media-split">
+      <img src="images/case-grandorf-1.png" alt="Макет Grandorf для кошек">
+      <img src="images/case-grandorf-2.png" alt="Макет Grandorf для собак">
     </div>
   </div>
 
@@ -799,7 +782,7 @@
         <p>Отработали территорию огня, укрепили лояльность геймеров и доказали, что киберспорт — это тоже спорт.</p>
       </div>
     </div>
-    <div class="case-body case-body-video">
+    <div class="case-media">
       <iframe src="https://www.youtube.com/embed/8H7Iaa_OsLU" title="Burger King × PUBG" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
@@ -840,7 +823,7 @@
         <span class="value">Агентство «Звонко»</span>
       </div>
     </div>
-    <div class="case-body">Кейс 3</div>
+    <div class="case-media case-media-empty">Скоро добавим визуал</div>
   </div>
 
   <div class="case">
@@ -879,8 +862,8 @@
         <p>Я люблю эту идею. Мелочь, но так важно быть чьим-то кодовым словом.</p>
       </div>
     </div>
-    <div class="case-body case-body-single">
-      <img src="images/case-alfabank-kodslovo.png" alt="Альфа-Банк — карта с кодовым словом" class="case-shot-full">
+    <div class="case-media">
+      <img src="images/case-alfabank-kodslovo.png" alt="Альфа-Банк — карта с кодовым словом">
     </div>
   </div>
 
@@ -919,9 +902,9 @@
         <p>Паспорт Простора в будущем может брендировать всю креативную индустрию и стать единым документом для каждого креатора в России.</p>
       </div>
     </div>
-    <div class="case-body case-body-images">
-      <img src="images/case-prostor-passport.webp" alt="Паспорт креатора Простора" class="case-shot">
-      <img src="images/case-prostor-billboard.webp" alt="Паспорт креатора на медиафасаде в Москва-Сити" class="case-shot">
+    <div class="case-media case-media-split">
+      <img src="images/case-prostor-passport.webp" alt="Паспорт креатора Простора">
+      <img src="images/case-prostor-billboard.webp" alt="Паспорт креатора на медиафасаде в Москва-Сити">
     </div>
   </div>
 </section>
@@ -973,7 +956,7 @@
         <span class="value">РА Восход</span>
       </div>
     </div>
-    <div class="case-body case-body-video">
+    <div class="case-media">
       <iframe src="https://www.youtube.com/embed/XBQMKPP3R3I" title="HH.ru — тест-драйв профессий" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
