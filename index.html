@@ -207,14 +207,10 @@
 
   /* ===== Задача/Наблюдение — компактный контекст мелким текстом ===== */
   .case-context{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 32px;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 10px 20px;
     margin-top: 10px;
-  }
-
-  .case-context .field{
-    flex: 1 1 200px;
   }
 
   /* ===== Идея + вложение рядом — главный акцент кейса ===== */
@@ -659,6 +655,7 @@
 
   @media (max-width: 720px){
     .case-highlight{ grid-template-columns: 1fr; }
+    .case-context{ grid-template-columns: 1fr; }
     .footer-intro{ grid-template-columns: 1fr; }
     .footer-columns{ grid-template-columns: 1fr; }
     header .wrap{ height: 72px; padding: 0 20px; position: relative; }
