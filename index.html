@@ -469,8 +469,7 @@
 
   /* ===== ПОДВАЛ (FOOTER / КОНТАКТЫ) ===== */
   footer{
-    background: #141414;
-    color: #b8b8b8;
+    background: var(--beige-dark);
     padding: 64px 0 40px;
   }
 
@@ -484,31 +483,51 @@
   }
 
   footer .footer-about{
-    max-width: 640px;
+    max-width: 880px;
   }
 
   footer h3{
     font-size: 28px;
-    margin: 0 0 8px;
-    color: #ffffff;
+    margin: 0 0 12px;
+    color: var(--text);
   }
 
   .footer-intro{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px 24px;
-    margin: 0 0 16px;
+    margin: 0 0 28px;
   }
 
   .footer-intro p{
     margin: 0;
     font-size: 19px;
+    font-weight: 600;
     line-height: 1.5;
+    color: var(--text);
+  }
+
+  .footer-columns{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 32px;
+    margin-bottom: 8px;
+  }
+
+  .footer-label{
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--idea-blue);
+    margin-bottom: 10px;
   }
 
   footer p{
     margin: 0 0 16px;
-    color: #b8b8b8;
+    color: var(--text);
+    line-height: 1.5;
   }
 
   footer p:last-of-type{
@@ -516,17 +535,19 @@
   }
 
   footer .footer-about strong{
-    color: #ffffff;
+    font-weight: 800;
+    color: var(--text);
   }
 
   footer .footer-skills{
-    margin: 0 0 16px;
+    margin: 0;
     padding-left: 20px;
-    color: #b8b8b8;
+    color: var(--text);
   }
 
   footer .footer-skills strong{
-    color: #ffffff;
+    font-weight: 800;
+    color: var(--text);
   }
 
   footer .footer-skills li{
@@ -535,14 +556,6 @@
 
   footer .footer-skills li:last-child{
     margin-bottom: 0;
-  }
-
-  .footer-flyer-card{
-    display: inline-block;
-    margin-top: 20px;
-    padding: 16px;
-    background: var(--beige);
-    border-radius: var(--radius);
   }
 
   .footer-flyer-wrap{
@@ -602,7 +615,7 @@
     padding: 6px 14px;
     font-size: 16px;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--text);
   }
 
   .cv-button .doodle-circle{
@@ -630,6 +643,7 @@
   @media (max-width: 720px){
     .case-highlight{ grid-template-columns: 1fr; }
     .footer-intro{ grid-template-columns: 1fr; }
+    .footer-columns{ grid-template-columns: 1fr; }
     header .wrap{ height: 72px; padding: 0 20px; position: relative; }
     .section-title{ font-size: 30px; }
     .coming-grid{ grid-template-columns: repeat(2, 1fr); }
@@ -1005,27 +1019,34 @@
           <p>Даша Фокина, креатор с 3+ летним бэкграундом креативного стратега.</p>
           <p>Росла в Восходе и Инстинкте, а ещё в MADS, Икре и Высшей школе экономики.</p>
         </div>
-        <p><strong>Навыки:</strong></p>
-        <ul class="footer-skills">
-          <li><strong>Придумываю</strong> рекламные концепции, идеи спецпроектов и кампании 360°.</li>
-          <li><strong>Пишу</strong> слоганы, разрабатываю нейминги, люблю слово.</li>
-          <li><strong>Нахожу</strong> живые, а порой глупые инсайты.</li>
-          <li><strong>Защищаю</strong> и презентую решения — свои и командные.</li>
-          <li><strong>Стратегирую</strong> себя и других.</li>
-          <li><strong>Могу</strong> быть полезна как бренд-кипер: позиционирование, тональность, бренд-платформы, креативные рамки.</li>
-        </ul>
-        <p>Мне повезло поработать с множеством классных брендов из разных отраслей: hh.ru, Flowwow, Авито, М.Видео, Мотив, Индилайт, Точка Банк, TBC Банк, Sela, Вкусно — и точка, Мистраль, OLX, разные бренды недвижимости и другие.</p>
-        <p>Не кривя душой, я люблю рекламу.<br>Хочу, чтобы сказанное имело смысл и радовало человека по другую сторону.</p>
-        <div class="footer-flyer-card">
-          <div class="footer-flyer-wrap">
-            <img src="images/footer-flyer.png" alt="Крутая реклама — контакты Даши Фокиной" class="footer-flyer">
-            <a href="tel:+79221413993" class="flyer-hotspot flyer-hotspot-1" aria-label="Позвонить: +7 922 141 39 93"></a>
-            <a href="mailto:fokinaaa.di@gmail.com" class="flyer-hotspot flyer-hotspot-2" aria-label="Написать на почту">
-              <span class="flyer-tooltip">fokinaaa.di@gmail.com</span>
-            </a>
-            <a href="https://t.me/fokinaaa_dasha" target="_blank" rel="noopener" class="flyer-hotspot flyer-hotspot-3" aria-label="Телеграм"></a>
-            <a href="https://www.instagram.com/fokina__dasha?stkn=MWp0dGx6a3NlZ2VkcQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="flyer-hotspot flyer-hotspot-4" aria-label="Инстаграм"></a>
+        <div class="footer-columns">
+          <div class="footer-block">
+            <span class="footer-label">Навыки</span>
+            <ul class="footer-skills">
+              <li><strong>Придумываю</strong> рекламные концепции, идеи спецпроектов и кампании 360°.</li>
+              <li><strong>Пишу</strong> слоганы, разрабатываю нейминги, люблю слово.</li>
+              <li><strong>Нахожу</strong> живые, а порой глупые инсайты.</li>
+              <li><strong>Защищаю</strong> и презентую решения — свои и командные.</li>
+              <li><strong>Стратегирую</strong> себя и других.</li>
+              <li><strong>Могу</strong> быть полезна как бренд-кипер: позиционирование, тональность, бренд-платформы, креативные рамки.</li>
+            </ul>
           </div>
+
+          <div class="footer-block">
+            <span class="footer-label">С кем работала</span>
+            <p><strong>Мне повезло</strong> поработать с множеством классных брендов из разных отраслей: hh.ru, Flowwow, Авито, М.Видео, Мотив, Индилайт, Точка Банк, TBC Банк, Sela, Вкусно — и точка, Мистраль, OLX, разные бренды недвижимости и другие.</p>
+            <p>Не кривя душой, <strong>я люблю</strong> рекламу.<br><strong>Хочу</strong>, чтобы сказанное имело смысл и радовало человека по другую сторону.</p>
+          </div>
+        </div>
+
+        <div class="footer-flyer-wrap">
+          <img src="images/footer-flyer.png" alt="Крутая реклама — контакты Даши Фокиной" class="footer-flyer">
+          <a href="tel:+79221413993" class="flyer-hotspot flyer-hotspot-1" aria-label="Позвонить: +7 922 141 39 93"></a>
+          <a href="mailto:fokinaaa.di@gmail.com" class="flyer-hotspot flyer-hotspot-2" aria-label="Написать на почту">
+            <span class="flyer-tooltip">fokinaaa.di@gmail.com</span>
+          </a>
+          <a href="https://t.me/fokinaaa_dasha" target="_blank" rel="noopener" class="flyer-hotspot flyer-hotspot-3" aria-label="Телеграм"></a>
+          <a href="https://www.instagram.com/fokina__dasha?stkn=MWp0dGx6a3NlZ2VkcQ%3D%3D&utm_source=qr" target="_blank" rel="noopener" class="flyer-hotspot flyer-hotspot-4" aria-label="Инстаграм"></a>
         </div>
         <div class="cv-button-wrap">
           <a href="https://drive.google.com/file/d/1uU2JAGTTBwD4SdskpKgoDIeEZAe6fkEl/view?usp=sharing" target="_blank" rel="noopener" class="cv-button">
