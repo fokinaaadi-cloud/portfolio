@@ -386,14 +386,19 @@
   }
 
   .case-card-head{
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "num title"
+      "format format";
+    column-gap: 8px;
+    row-gap: 2px;
     align-items: baseline;
-    flex-wrap: wrap;
-    gap: 8px;
     margin-bottom: 4px;
   }
 
   .case-card-num{
+    grid-area: num;
     font-size: 13px;
     color: var(--text-soft);
   }
@@ -405,31 +410,35 @@
   }
 
   .case-card-brand{
+    grid-area: title;
     color: var(--idea-blue);
     font-weight: 800;
     font-size: 20px;
     line-height: 1.25;
+    transition: opacity 0.2s ease;
   }
 
   .case-card-format{
+    grid-area: format;
     color: var(--text-soft);
     font-size: 12px;
     line-height: 1.25;
-    flex-basis: 100%;
   }
 
   .case-card-hint{
-    margin-left: auto;
-    font-size: 12px;
-    font-weight: 700;
+    grid-area: title;
+    align-self: baseline;
+    font-size: 20px;
+    font-weight: 800;
     color: var(--idea-blue);
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
     opacity: 0;
     transition: opacity 0.2s ease;
   }
 
   @media (hover: hover) and (pointer: fine){
+    .case-card:hover .case-card-brand{
+      opacity: 0;
+    }
     .case-card:hover .case-card-hint{
       opacity: 1;
     }
