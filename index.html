@@ -305,14 +305,13 @@
 
   .case-media-split{
     display: flex;
+    align-items: flex-start;
     gap: 6px;
   }
 
   .case-media-split img{
     width: calc(50% - 3px);
-    aspect-ratio: 4 / 3;
     height: auto;
-    object-fit: cover;
   }
 
   .case-media-stack{
@@ -491,8 +490,8 @@
   .case-card-panel{
     position: relative;
     width: 100%;
-    max-width: 1040px;
-    max-height: 92vh;
+    max-width: 1240px;
+    max-height: 94vh;
     overflow-y: auto;
     border-radius: var(--radius);
   }
@@ -1508,7 +1507,7 @@
               </div>
             </div>
 
-            <div class="case-highlight case-highlight-top">
+            <div class="case-highlight">
               <div class="case-idea">
                 <span class="label">Идея</span>
                 <p>Поблагодарить абонентов с помощью 30 НиЛЕТт.</p>
@@ -1516,8 +1515,21 @@
               </div>
 
               <div class="case-media case-media-stack">
-                <img src="images/case-motiv-banner.jpeg" alt="Баннер «Мотив 30 ниЛЕТт» в стрит-арт стиле">
                 <iframe src="https://www.youtube.com/embed/XokbS1i5Jck" title="Мотив — 30 ниЛЕТт" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                <img src="images/case-motiv-banner.jpeg" alt="Баннер «Мотив 30 ниЛЕТт» в стрит-арт стиле">
+              </div>
+            </div>
+
+            <div class="case-good">
+              <span class="label">Что хорошего?</span>
+              <p>Тизер сработал лучше лобового сообщения и вызвал отклик аудитории.</p>
+              <p>А ещё поклонники стали вырезать фрагменты с автографом и лицом артиста прямо из баннеров в разных городах уральского региона — всего пострадало 11 конструкций в Свердловской и Курганской областях, а историю подхватили СМИ.</p>
+            </div>
+
+            <div class="case-meta">
+              <div class="field">
+                <span class="label">Идея</span>
+                <span class="value">РА Восход</span>
               </div>
             </div>
 
@@ -1534,19 +1546,6 @@
                 </li>
               </ol>
             </div>
-
-            <div class="case-good">
-              <span class="label">Что хорошего?</span>
-              <p>Тизер сработал лучше лобового сообщения и вызвал отклик аудитории.</p>
-              <p>А ещё поклонники стали вырезать фрагменты с автографом и лицом артиста прямо из баннеров в разных городах уральского региона — всего пострадало 11 конструкций в Свердловской и Курганской областях, а историю подхватили СМИ.</p>
-            </div>
-
-            <div class="case-meta">
-              <div class="field">
-                <span class="label">Идея</span>
-                <span class="value">РА Восход</span>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -1555,7 +1554,7 @@
   </div>
 
   <div class="coming-soon">
-    <p class="coming-heading">Скоро здесь появятся кампании 360</p>
+    <p class="coming-heading">Скоро здесь появятся 360 кампании</p>
 
     <div class="coming-grid">
       <div class="coming-item">
