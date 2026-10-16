@@ -351,20 +351,30 @@
     line-height: 1.25;
   }
 
-  /* ===== СЕТКА ПРЕВЬЮ-КАРТОЧЕК КЕЙСОВ (крупные, без рамок/плашек) ===== */
+  /* ===== СЕТКА ПРЕВЬЮ-КАРТОЧЕК КЕЙСОВ (неравномерная, как в референсе) ===== */
   .case-grid{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 56px 32px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 48px 28px;
   }
 
   @media (max-width: 720px){
     .case-grid{ grid-template-columns: 1fr; gap: 40px; }
+    .case-card, .case-card.case-card--lg{ grid-column: auto; }
   }
 
   .case-card{
     position: relative;
     cursor: pointer;
+    grid-column: span 1;
+  }
+
+  .case-card.case-card--lg{
+    grid-column: span 2;
+  }
+
+  .case-card.case-card--lg .case-card-media{
+    aspect-ratio: 16 / 10;
   }
 
   .case-card-head{
@@ -990,7 +1000,7 @@
 
   <div class="case-grid">
 
-    <div class="case-card">
+    <div class="case-card case-card--lg">
       <div class="case-card-head">
         <span class="case-card-num">01</span>
         <span class="case-card-brand">Burger King × PUBG</span>
@@ -1166,7 +1176,7 @@
       </div>
     </div>
 
-    <div class="case-card">
+    <div class="case-card case-card--lg">
       <div class="case-card-head">
         <span class="case-card-num">04</span>
         <span class="case-card-brand">А-Деньги</span>
@@ -1227,7 +1237,7 @@
       </div>
     </div>
 
-    <div class="case-card">
+    <div class="case-card case-card--lg">
       <div class="case-card-head">
         <span class="case-card-num">05</span>
         <span class="case-card-brand">ВК Простор</span>
@@ -1367,7 +1377,7 @@
       </div>
     </div>
 
-    <div class="case-card">
+    <div class="case-card case-card--lg">
       <div class="case-card-head">
         <span class="case-card-num">02</span>
         <span class="case-card-brand">OLX</span>
