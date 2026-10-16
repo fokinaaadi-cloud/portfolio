@@ -228,8 +228,10 @@
   }
 
   .section-title{
-    font-size: 40px;
-    font-weight: 800;
+    display: block;
+    width: 320px;
+    max-width: 60vw;
+    height: auto;
     margin: 0 0 32px;
   }
 
@@ -378,6 +380,7 @@
   }
 
   .case-card-media{
+    position: relative;
     width: 100%;
     aspect-ratio: 4 / 3;
     background: rgba(255, 255, 255, 0.08);
@@ -390,6 +393,28 @@
     object-fit: cover;
     display: block;
     transition: transform 0.3s ease;
+  }
+
+  .case-card-hint{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(20, 20, 20, 0.45);
+    color: var(--white);
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+  }
+
+  @media (hover: hover) and (pointer: fine){
+    .case-card:hover .case-card-hint{
+      opacity: 1;
+    }
   }
 
   .case-card:hover .case-card-media img{
@@ -430,13 +455,6 @@
     visibility: hidden;
     transition: opacity 0.2s ease;
     cursor: default;
-  }
-
-  @media (hover: hover) and (pointer: fine){
-    .case-card:hover .case-card-overlay{
-      opacity: 1;
-      visibility: visible;
-    }
   }
 
   .case-card.is-open .case-card-overlay{
@@ -888,7 +906,7 @@
     .footer-intro{ grid-template-columns: 1fr; }
     .footer-columns{ grid-template-columns: 1fr; }
     header .wrap{ height: 72px; padding: 0 20px; position: relative; }
-    .section-title{ font-size: 30px; }
+    .section-title{ width: 220px; max-width: 65vw; }
     .quick-nav{ right: 12px; bottom: 12px; gap: 6px; }
     .quick-nav-btn{ padding: 8px 14px; font-size: 13px; }
     .coming-grid{ grid-template-columns: repeat(2, 1fr); }
@@ -974,13 +992,14 @@
 <!-- ===== ЛЕНДИНГ ===== -->
 <section class="landing" id="creative">
  <div class="wrap">
-  <h2 class="section-title">Креатив</h2>
+  <img src="images/section-title-kreativ.png" alt="Креатив" class="section-title">
 
   <div class="case-grid">
 
     <div class="case-card">
       <div class="case-card-media">
         <img src="https://img.youtube.com/vi/8H7Iaa_OsLU/hqdefault.jpg" alt="Burger King × PUBG" loading="lazy">
+      <span class="case-card-hint">Посмотреть работу</span>
       </div>
       <div class="case-card-title">
         <span class="case-card-brand">Burger King × PUBG</span>
@@ -1037,6 +1056,7 @@
     <div class="case-card">
       <div class="case-card-media">
         <img src="images/case-grandorf-1.png" alt="Grandorf" loading="lazy">
+      <span class="case-card-hint">Посмотреть работу</span>
       </div>
       <div class="case-card-title">
         <span class="case-card-brand">Grandorf</span>
@@ -1094,6 +1114,7 @@
     <div class="case-card">
       <div class="case-card-media">
         <img src="images/case-alfabank-kodslovo.png" alt="Альфа-Банк" loading="lazy">
+      <span class="case-card-hint">Посмотреть работу</span>
       </div>
       <div class="case-card-title">
         <span class="case-card-brand">Альфа-Банк</span>
@@ -1151,6 +1172,7 @@
     <div class="case-card">
       <div class="case-card-media">
         <img src="https://img.youtube.com/vi/jJ47ZOP0b50/hqdefault.jpg" alt="А-Деньги" loading="lazy">
+      <span class="case-card-hint">Посмотреть работу</span>
       </div>
       <div class="case-card-title">
         <span class="case-card-brand">А-Деньги</span>
@@ -1210,6 +1232,7 @@
     <div class="case-card">
       <div class="case-card-media">
         <img src="images/case-prostor-passport.webp" alt="ВК Простор" loading="lazy">
+      <span class="case-card-hint">Посмотреть работу</span>
       </div>
       <div class="case-card-title">
         <span class="case-card-brand">ВК Простор</span>
@@ -1271,13 +1294,14 @@
 
 <section class="landing" id="strategy">
  <div class="wrap">
-  <h2 class="section-title">Стратегия</h2>
+  <img src="images/section-title-strategiya.png" alt="Стратегия" class="section-title">
 
   <div class="case-grid">
 
     <div class="case-card">
       <div class="case-card-media">
         <img src="https://img.youtube.com/vi/XBQMKPP3R3I/hqdefault.jpg" alt="HH.ru" loading="lazy">
+      <span class="case-card-hint">Посмотреть работу</span>
       </div>
       <div class="case-card-title">
         <span class="case-card-brand">HH.ru</span>
@@ -1346,6 +1370,7 @@
     <div class="case-card">
       <div class="case-card-media">
         <img src="https://img.youtube.com/vi/3146WclmoIM/hqdefault.jpg" alt="OLX" loading="lazy">
+      <span class="case-card-hint">Посмотреть работу</span>
       </div>
       <div class="case-card-title">
         <span class="case-card-brand">OLX</span>
@@ -1411,6 +1436,7 @@
     <div class="case-card">
       <div class="case-card-media">
         <img src="images/case-motiv-banner.jpeg" alt="Мотив" loading="lazy">
+      <span class="case-card-hint">Посмотреть работу</span>
       </div>
       <div class="case-card-title">
         <span class="case-card-brand">Мотив</span>
