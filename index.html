@@ -222,16 +222,19 @@
 
   /* ===== ЛЕНДИНГ: КРЕАТИВ / СТРАТЕГИЯ ===== */
   section.landing{
-    padding: 100px 0 60px;
+    background: var(--idea-blue);
+    color: var(--white);
+    padding: 60px 0;
   }
 
   .section-title{
     font-size: 40px;
     font-weight: 800;
-    margin: 0 0 48px;
+    margin: 0 0 32px;
   }
 
   .case{
+    color: var(--text);
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: var(--radius);
@@ -352,7 +355,13 @@
   .case-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 14px;
+  }
+
+  /* На широких экранах весь ряд кейсов раздела помещается без прокрутки внутри секции */
+  @media (min-width: 901px){
+    #creative .case-grid{ grid-template-columns: repeat(5, 1fr); }
+    #strategy .case-grid{ grid-template-columns: repeat(3, 1fr); }
   }
 
   @media (max-width: 900px){
@@ -362,22 +371,16 @@
   .case-card{
     position: relative;
     cursor: pointer;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .case-card:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 14px 30px rgba(0,0,0,0.1);
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    overflow: visible;
   }
 
   .case-card-media{
     width: 100%;
     aspect-ratio: 4 / 3;
-    background: var(--beige);
+    background: rgba(255, 255, 255, 0.08);
     overflow: hidden;
   }
 
@@ -386,25 +389,30 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .case-card:hover .case-card-media img{
+    transform: scale(1.04);
   }
 
   .case-card-title{
-    padding: 14px 16px 18px;
+    padding: 10px 0 0;
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 2px;
   }
 
   .case-card-brand{
-    color: var(--idea-blue);
+    color: var(--white);
     font-weight: 800;
-    font-size: 16px;
+    font-size: 13px;
     line-height: 1.25;
   }
 
   .case-card-format{
-    color: var(--text);
-    font-size: 13px;
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 11px;
     line-height: 1.25;
   }
 
@@ -600,7 +608,7 @@
     margin: 0 0 20px;
     font-size: 17px;
     line-height: 1.6;
-    color: var(--text);
+    color: var(--white);
   }
 
   .coming-soon p:last-child{
@@ -679,7 +687,7 @@
 
   .coming-caption{
     font-size: 13px;
-    color: var(--text-soft);
+    color: rgba(255, 255, 255, 0.75);
     text-align: center;
     line-height: 1.4;
   }
@@ -964,7 +972,8 @@
 </section>
 
 <!-- ===== ЛЕНДИНГ ===== -->
-<section class="landing wrap" id="creative">
+<section class="landing" id="creative">
+ <div class="wrap">
   <h2 class="section-title">Креатив</h2>
 
   <div class="case-grid">
@@ -1257,9 +1266,11 @@
     </div>
 
   </div>
+ </div>
 </section>
 
-<section class="landing wrap" id="strategy">
+<section class="landing" id="strategy">
+ <div class="wrap">
   <h2 class="section-title">Стратегия</h2>
 
   <div class="case-grid">
@@ -1509,6 +1520,7 @@
     <p>Бренд-платформы, позиционирование, креативные коды и другие серьёзные и несерьёзные вещи я по очевидным причинам не могу здесь показывать.</p>
     <img src="images/coming-soon-note.png" alt="Но разве не прекрасно, когда есть повод для беседы?" class="coming-soon-note">
   </div>
+ </div>
 </section>
 
 <!-- ===== ПОДВАЛ / КОНТАКТЫ ===== -->
