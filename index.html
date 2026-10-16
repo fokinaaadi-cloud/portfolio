@@ -125,6 +125,36 @@
     background: var(--text);
   }
 
+  /* ===== ПЛАВАЮЩИЕ КНОПКИ БЫСТРОГО ПЕРЕХОДА ===== */
+  .quick-nav{
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 8px;
+  }
+
+  .quick-nav-btn{
+    padding: 10px 20px;
+    border-radius: 999px;
+    background: var(--white);
+    border: 1px solid var(--idea-blue);
+    color: var(--idea-blue);
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transition: all 0.2s ease;
+  }
+
+  .quick-nav-btn:hover{
+    background: var(--idea-blue);
+    color: var(--white);
+    border-color: var(--idea-blue);
+  }
+
   /* ===== ГЛАВНЫЙ ЭКРАН (HERO) ===== */
   .hero{
     min-height: calc(100vh - 84px);
@@ -274,6 +304,12 @@
     width: calc(50% - 3px);
   }
 
+  .case-media-stack{
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
   .case-media-empty{
     display: flex;
     align-items: center;
@@ -355,6 +391,52 @@
     border-top: 1px solid var(--border);
   }
 
+  .case-steps{
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+
+  .case-steps-list{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 8px 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: case-step;
+  }
+
+  .case-steps-list li{
+    counter-increment: case-step;
+    padding-left: 22px;
+    position: relative;
+  }
+
+  .case-steps-list li::before{
+    content: counter(case-step) ".";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--idea-blue);
+  }
+
+  .case-step-title{
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 2px;
+  }
+
+  .case-steps-list p{
+    margin: 0;
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.3;
+  }
+
   .case-good p{
     margin: 0;
     font-size: 13px;
@@ -434,7 +516,7 @@
     border-radius: calc(var(--radius) - 6px);
     overflow: hidden;
     position: relative;
-    background: var(--beige-dark);
+    background: #dde7fb;
   }
 
   .coming-blur::before{
@@ -442,31 +524,31 @@
     position: absolute;
     inset: -30px;
     background:
-      radial-gradient(circle at 28% 30%, var(--border), transparent 60%),
-      radial-gradient(circle at 72% 62%, var(--accent), transparent 55%),
-      radial-gradient(circle at 42% 82%, var(--beige-dark), transparent 60%);
+      radial-gradient(circle at 46% 32%, #0f2a6b, transparent 55%),
+      radial-gradient(circle at 72% 60%, var(--idea-blue), transparent 58%),
+      radial-gradient(circle at 24% 72%, #9db8ee, transparent 55%);
     filter: blur(22px);
   }
 
   .coming-item:nth-child(2) .coming-blur::before{
     background:
-      radial-gradient(circle at 70% 25%, var(--accent), transparent 55%),
-      radial-gradient(circle at 25% 55%, var(--border), transparent 60%),
-      radial-gradient(circle at 60% 85%, var(--text-soft), transparent 50%);
+      radial-gradient(circle at 68% 28%, var(--idea-blue), transparent 55%),
+      radial-gradient(circle at 26% 50%, #0f2a6b, transparent 58%),
+      radial-gradient(circle at 58% 82%, #9db8ee, transparent 52%);
   }
 
   .coming-item:nth-child(3) .coming-blur::before{
     background:
-      radial-gradient(circle at 35% 75%, var(--border), transparent 55%),
-      radial-gradient(circle at 65% 30%, var(--beige-dark), transparent 60%),
-      radial-gradient(circle at 20% 20%, var(--accent), transparent 50%);
+      radial-gradient(circle at 32% 70%, #9db8ee, transparent 55%),
+      radial-gradient(circle at 66% 34%, #0f2a6b, transparent 58%),
+      radial-gradient(circle at 22% 24%, var(--idea-blue), transparent 50%);
   }
 
   .coming-item:nth-child(4) .coming-blur::before{
     background:
-      radial-gradient(circle at 60% 70%, var(--text-soft), transparent 55%),
-      radial-gradient(circle at 30% 40%, var(--accent), transparent 55%),
-      radial-gradient(circle at 80% 20%, var(--border), transparent 60%);
+      radial-gradient(circle at 58% 68%, var(--idea-blue), transparent 55%),
+      radial-gradient(circle at 28% 40%, #9db8ee, transparent 55%),
+      radial-gradient(circle at 78% 22%, #0f2a6b, transparent 58%);
   }
 
   .coming-caption{
@@ -670,6 +752,8 @@
     .footer-columns{ grid-template-columns: 1fr; }
     header .wrap{ height: 72px; padding: 0 20px; position: relative; }
     .section-title{ font-size: 30px; }
+    .quick-nav{ right: 12px; bottom: 12px; gap: 6px; }
+    .quick-nav-btn{ padding: 8px 14px; font-size: 13px; }
     .coming-grid{ grid-template-columns: repeat(2, 1fr); }
 
     .hero-row{ max-width: 100%; margin-top: 8px; }
@@ -718,6 +802,12 @@
     </button>
   </div>
 </header>
+
+<!-- ===== ПЛАВАЮЩИЕ КНОПКИ БЫСТРОГО ПЕРЕХОДА ===== -->
+<div class="quick-nav">
+  <a href="#creative" class="quick-nav-btn">Креатив</a>
+  <a href="#strategy" class="quick-nav-btn">Стратегия</a>
+</div>
 
 <!-- ===== ГЛАВНЫЙ ЭКРАН ===== -->
 <section class="hero">
@@ -1011,6 +1101,124 @@
     </div>
   </div>
 
+  <div class="case">
+    <h3 class="case-title">
+      <span class="case-title-brand">OLX</span>
+      <span class="case-title-format">Идея креативного кода</span>
+    </h3>
+
+    <div class="case-context">
+      <div class="field">
+        <span class="label">Задача</span>
+        <span class="value">Напомнить аудитории, что OLX — платформа объявлений №1 в Узбекистане, где уже больше 6 млн пользователей.</span>
+      </div>
+
+      <div class="field">
+        <span class="label">Наблюдение</span>
+        <span class="value">6 миллионов — это шестая часть всего Узбекистана. Проще говоря, каждый шестой человек, которого вы встречаете на улице, уже пользуется OLX.</span>
+      </div>
+    </div>
+
+    <div class="case-highlight">
+      <div class="case-idea">
+        <span class="label">Идея</span>
+        <p>Визуализировать масштаб не в цифрах, а в лицах.</p>
+        <p class="case-idea-detail">Ключевой графический элемент кода — рамка, которая превращает предмет в товар на площадке.</p>
+
+        <div class="case-slogan">
+          <span class="label">Слоган</span>
+          <p>Здесь все свои</p>
+        </div>
+      </div>
+
+      <div class="case-media">
+        <iframe src="https://www.youtube.com/embed/3146WclmoIM" title="OLX — креативный код" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="case-good">
+      <span class="label">Что хорошего?</span>
+      <p>Подчеркнули лидерство, показав постоянное присутствие бренда в жизни людей.</p>
+      <p>А ещё в Узбекистане люди сильно ориентируются на мнение соседей — и мы буквально показали: твой сосед уже там.</p>
+    </div>
+
+    <div class="case-meta">
+      <div class="field">
+        <span class="label">Идея</span>
+        <span class="value">РА Восход</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="case">
+    <h3 class="case-title">
+      <span class="case-title-brand">Мотив</span>
+      <span class="case-title-format">Имиджевая кампания к 30-летию</span>
+    </h3>
+
+    <div class="case-context">
+      <div class="field">
+        <span class="label">Задача</span>
+        <span class="value">Выделиться среди типичной юбилейной коммуникации брендов и укрепить лояльность текущей базы абонентов.</span>
+      </div>
+
+      <div class="field">
+        <span class="label">Аудитория</span>
+        <span class="value">Текущая база абонентов.</span>
+      </div>
+
+      <div class="field">
+        <span class="label">Наблюдение</span>
+        <span class="value">Бренды отмечают юбилеи традиционными форматами — отсюда и рекламная слепота.</span>
+      </div>
+
+      <div class="field">
+        <span class="label">Правда о бренде</span>
+        <span class="value">Мотив — «свой» оператор на Урале: локальный, понятный, говорящий с клиентами на одном языке. Таким бренд за 30 лет сделали его абоненты.</span>
+      </div>
+    </div>
+
+    <div class="case-highlight">
+      <div class="case-idea">
+        <span class="label">Идея</span>
+        <p>Поблагодарить абонентов с помощью 30 НиЛЕТт.</p>
+        <p class="case-idea-detail">В ролике артист сменил 30 образов и профессий, чтобы показать, насколько разные люди сделали Мотив таким, каким мы его знаем сегодня.</p>
+      </div>
+
+      <div class="case-media case-media-stack">
+        <img src="images/case-motiv-banner.jpeg" alt="Баннер «Мотив 30 ниЛЕТт» в стрит-арт стиле">
+        <iframe src="https://www.youtube.com/embed/XokbS1i5Jck" title="Мотив — 30 ниЛЕТт" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div class="case-steps">
+      <span class="label">Как проходила кампания</span>
+      <ol class="case-steps-list">
+        <li>
+          <span class="case-step-title">Тизер</span>
+          <p>По городам Урала появились баннеры в дерзком стрит-арт стиле: реклама выглядела так, будто её «разрисовал» вандал от руки, а внизу — только номер телефона. Позвонив, человек слышал голос Нилетто и получал личное поздравление от артиста. На 30 баннерах стоял автограф Нилетто.</p>
+        </li>
+        <li>
+          <span class="case-step-title">Ролик</span>
+          <p>Кампанию закрывал ролик, где артист поздравлял абонентов в образах 30 разных уральцев.</p>
+        </li>
+      </ol>
+    </div>
+
+    <div class="case-good">
+      <span class="label">Что хорошего?</span>
+      <p>Тизер сработал лучше лобового сообщения и вызвал отклик аудитории.</p>
+      <p>А ещё поклонники стали вырезать фрагменты с автографом и лицом артиста прямо из баннеров в разных городах уральского региона — всего пострадало 11 конструкций в Свердловской и Курганской областях, а историю подхватили СМИ.</p>
+    </div>
+
+    <div class="case-meta">
+      <div class="field">
+        <span class="label">Идея</span>
+        <span class="value">РА Восход</span>
+      </div>
+    </div>
+  </div>
+
   <div class="coming-soon">
     <p class="coming-heading">Скоро здесь появятся 360°-кампании</p>
 
@@ -1021,15 +1229,15 @@
       </div>
       <div class="coming-item">
         <div class="coming-blur"></div>
-        <span class="coming-caption">Международная доска объявлений</span>
-      </div>
-      <div class="coming-item">
-        <div class="coming-blur"></div>
         <span class="coming-caption">Крупнейший застройщик Казахстана</span>
       </div>
       <div class="coming-item">
         <div class="coming-blur"></div>
-        <span class="coming-caption">Региональный оператор связи</span>
+        <span class="coming-caption">Лидер в категории продуктов из индейки</span>
+      </div>
+      <div class="coming-item">
+        <div class="coming-blur"></div>
+        <span class="coming-caption">Крупнейший производитель круп</span>
       </div>
     </div>
 
