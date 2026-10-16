@@ -222,17 +222,15 @@
 
   /* ===== ЛЕНДИНГ: КРЕАТИВ / СТРАТЕГИЯ ===== */
   section.landing{
-    background: var(--idea-blue);
-    color: var(--white);
-    padding: 60px 0;
+    padding: 100px 0 60px;
   }
 
   .section-title{
     display: block;
-    width: 320px;
+    width: 380px;
     max-width: 60vw;
     height: auto;
-    margin: 0 0 32px;
+    margin: 0 0 40px;
   }
 
   .case{
@@ -357,13 +355,7 @@
   .case-grid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-  }
-
-  /* На широких экранах весь ряд кейсов раздела помещается без прокрутки внутри секции */
-  @media (min-width: 901px){
-    #creative .case-grid{ grid-template-columns: repeat(5, 1fr); }
-    #strategy .case-grid{ grid-template-columns: repeat(3, 1fr); }
+    gap: 28px;
   }
 
   @media (max-width: 900px){
@@ -373,17 +365,23 @@
   .case-card{
     position: relative;
     cursor: pointer;
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    overflow: visible;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .case-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.1);
   }
 
   .case-card-media{
     position: relative;
     width: 100%;
     aspect-ratio: 4 / 3;
-    background: rgba(255, 255, 255, 0.08);
+    background: var(--beige);
     overflow: hidden;
   }
 
@@ -422,22 +420,22 @@
   }
 
   .case-card-title{
-    padding: 10px 0 0;
+    padding: 16px 18px 20px;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 3px;
   }
 
   .case-card-brand{
-    color: var(--white);
-    font-weight: 400;
-    font-size: 13px;
+    color: var(--idea-blue);
+    font-weight: 800;
+    font-size: 17px;
     line-height: 1.25;
   }
 
   .case-card-format{
-    color: rgba(255, 255, 255, 0.65);
-    font-size: 11px;
+    color: var(--text);
+    font-size: 13px;
     line-height: 1.25;
   }
 
@@ -626,7 +624,7 @@
     margin: 0 0 20px;
     font-size: 17px;
     line-height: 1.6;
-    color: var(--white);
+    color: var(--text);
   }
 
   .coming-soon p:last-child{
@@ -705,7 +703,7 @@
 
   .coming-caption{
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.75);
+    color: var(--text-soft);
     text-align: center;
     line-height: 1.4;
   }
