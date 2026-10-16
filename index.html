@@ -351,62 +351,63 @@
     line-height: 1.25;
   }
 
-  /* ===== СЕТКА ПРЕВЬЮ-КАРТОЧЕК КЕЙСОВ ===== */
+  /* ===== СЕТКА ПРЕВЬЮ-КАРТОЧЕК КЕЙСОВ (крупные, без рамок/плашек) ===== */
   .case-grid{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 56px 32px;
   }
 
-  @media (max-width: 900px){
-    .case-grid{ grid-template-columns: repeat(2, 1fr); }
+  @media (max-width: 720px){
+    .case-grid{ grid-template-columns: 1fr; gap: 40px; }
   }
 
   .case-card{
     position: relative;
     cursor: pointer;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
 
-  .case-card:hover{
-    transform: translateY(-4px);
-    box-shadow: 0 14px 30px rgba(0,0,0,0.1);
+  .case-card-head{
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
   }
 
-  .case-card-media{
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    background: var(--beige);
-    overflow: hidden;
+  .case-card-num{
+    font-size: 13px;
+    color: var(--text-soft);
   }
 
-  .case-card-media img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease;
+  .case-card-num::after{
+    content: '/';
+    margin-left: 8px;
+    color: var(--text-soft);
+  }
+
+  .case-card-brand{
+    color: var(--idea-blue);
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+  .case-card-format{
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.25;
   }
 
   .case-card-hint{
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(20, 20, 20, 0.45);
-    color: var(--white);
-    font-size: 13px;
+    margin-left: auto;
+    font-size: 12px;
     font-weight: 700;
-    text-align: center;
+    color: var(--idea-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
     opacity: 0;
     transition: opacity 0.2s ease;
-    pointer-events: none;
   }
 
   @media (hover: hover) and (pointer: fine){
@@ -415,28 +416,24 @@
     }
   }
 
+  .case-card-media{
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 10px;
+    background: var(--beige-dark);
+  }
+
+  .case-card-media img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
   .case-card:hover .case-card-media img{
-    transform: scale(1.04);
-  }
-
-  .case-card-title{
-    padding: 16px 18px 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
-
-  .case-card-brand{
-    color: var(--idea-blue);
-    font-weight: 800;
-    font-size: 17px;
-    line-height: 1.25;
-  }
-
-  .case-card-format{
-    color: var(--text);
-    font-size: 13px;
-    line-height: 1.25;
+    transform: scale(1.03);
   }
 
   /* ===== МОДАЛЬНАЯ ПЛАШКА С ПОЛНЫМ СОДЕРЖИМЫМ КЕЙСА ===== */
@@ -897,7 +894,6 @@
 
   @media (max-width: 720px){
     .case-highlight{ grid-template-columns: 1fr; }
-    .case-grid{ grid-template-columns: 1fr; }
     .case-card-panel{ max-height: 90vh; }
     .case-steps-list{ flex-direction: column; }
     .case-context{ grid-template-columns: 1fr; }
@@ -995,13 +991,14 @@
   <div class="case-grid">
 
     <div class="case-card">
-      <div class="case-card-media">
-        <img src="https://img.youtube.com/vi/8H7Iaa_OsLU/hqdefault.jpg" alt="Burger King × PUBG" loading="lazy">
-      <span class="case-card-hint">Посмотреть работу</span>
-      </div>
-      <div class="case-card-title">
+      <div class="case-card-head">
+        <span class="case-card-num">01</span>
         <span class="case-card-brand">Burger King × PUBG</span>
         <span class="case-card-format">Идея спецпроекта</span>
+        <span class="case-card-hint">Посмотреть работу</span>
+      </div>
+      <div class="case-card-media">
+        <img src="https://img.youtube.com/vi/8H7Iaa_OsLU/hqdefault.jpg" alt="Burger King × PUBG" loading="lazy">
       </div>
 
       <div class="case-card-overlay">
@@ -1052,13 +1049,14 @@
     </div>
 
     <div class="case-card">
-      <div class="case-card-media">
-        <img src="images/case-grandorf-1.png" alt="Grandorf" loading="lazy">
-      <span class="case-card-hint">Посмотреть работу</span>
-      </div>
-      <div class="case-card-title">
+      <div class="case-card-head">
+        <span class="case-card-num">02</span>
         <span class="case-card-brand">Grandorf</span>
         <span class="case-card-format">Большая идея</span>
+        <span class="case-card-hint">Посмотреть работу</span>
+      </div>
+      <div class="case-card-media">
+        <img src="images/case-grandorf-1.png" alt="Grandorf" loading="lazy">
       </div>
 
       <div class="case-card-overlay">
@@ -1110,13 +1108,14 @@
     </div>
 
     <div class="case-card">
-      <div class="case-card-media">
-        <img src="images/case-alfabank-kodslovo.png" alt="Альфа-Банк" loading="lazy">
-      <span class="case-card-hint">Посмотреть работу</span>
-      </div>
-      <div class="case-card-title">
+      <div class="case-card-head">
+        <span class="case-card-num">03</span>
         <span class="case-card-brand">Альфа-Банк</span>
         <span class="case-card-format">Идея социального проекта</span>
+        <span class="case-card-hint">Посмотреть работу</span>
+      </div>
+      <div class="case-card-media">
+        <img src="images/case-alfabank-kodslovo.png" alt="Альфа-Банк" loading="lazy">
       </div>
 
       <div class="case-card-overlay">
@@ -1168,13 +1167,14 @@
     </div>
 
     <div class="case-card">
-      <div class="case-card-media">
-        <img src="https://img.youtube.com/vi/jJ47ZOP0b50/hqdefault.jpg" alt="А-Деньги" loading="lazy">
-      <span class="case-card-hint">Посмотреть работу</span>
-      </div>
-      <div class="case-card-title">
+      <div class="case-card-head">
+        <span class="case-card-num">04</span>
         <span class="case-card-brand">А-Деньги</span>
         <span class="case-card-format">Идея мероприятия</span>
+        <span class="case-card-hint">Посмотреть работу</span>
+      </div>
+      <div class="case-card-media">
+        <img src="https://img.youtube.com/vi/jJ47ZOP0b50/hqdefault.jpg" alt="А-Деньги" loading="lazy">
       </div>
 
       <div class="case-card-overlay">
@@ -1228,13 +1228,14 @@
     </div>
 
     <div class="case-card">
-      <div class="case-card-media">
-        <img src="images/case-prostor-passport.webp" alt="ВК Простор" loading="lazy">
-      <span class="case-card-hint">Посмотреть работу</span>
-      </div>
-      <div class="case-card-title">
+      <div class="case-card-head">
+        <span class="case-card-num">05</span>
         <span class="case-card-brand">ВК Простор</span>
         <span class="case-card-format">Идея 360</span>
+        <span class="case-card-hint">Посмотреть работу</span>
+      </div>
+      <div class="case-card-media">
+        <img src="images/case-prostor-passport.webp" alt="ВК Простор" loading="lazy">
       </div>
 
       <div class="case-card-overlay">
@@ -1297,13 +1298,14 @@
   <div class="case-grid">
 
     <div class="case-card">
-      <div class="case-card-media">
-        <img src="https://img.youtube.com/vi/XBQMKPP3R3I/hqdefault.jpg" alt="HH.ru" loading="lazy">
-      <span class="case-card-hint">Посмотреть работу</span>
-      </div>
-      <div class="case-card-title">
+      <div class="case-card-head">
+        <span class="case-card-num">01</span>
         <span class="case-card-brand">HH.ru</span>
         <span class="case-card-format">Идея спецпроекта</span>
+        <span class="case-card-hint">Посмотреть работу</span>
+      </div>
+      <div class="case-card-media">
+        <img src="https://img.youtube.com/vi/XBQMKPP3R3I/hqdefault.jpg" alt="HH.ru" loading="lazy">
       </div>
 
       <div class="case-card-overlay">
@@ -1366,13 +1368,14 @@
     </div>
 
     <div class="case-card">
-      <div class="case-card-media">
-        <img src="https://img.youtube.com/vi/3146WclmoIM/hqdefault.jpg" alt="OLX" loading="lazy">
-      <span class="case-card-hint">Посмотреть работу</span>
-      </div>
-      <div class="case-card-title">
+      <div class="case-card-head">
+        <span class="case-card-num">02</span>
         <span class="case-card-brand">OLX</span>
         <span class="case-card-format">Идея креативного кода</span>
+        <span class="case-card-hint">Посмотреть работу</span>
+      </div>
+      <div class="case-card-media">
+        <img src="https://img.youtube.com/vi/3146WclmoIM/hqdefault.jpg" alt="OLX" loading="lazy">
       </div>
 
       <div class="case-card-overlay">
@@ -1432,13 +1435,14 @@
     </div>
 
     <div class="case-card">
-      <div class="case-card-media">
-        <img src="images/case-motiv-banner.jpeg" alt="Мотив" loading="lazy">
-      <span class="case-card-hint">Посмотреть работу</span>
-      </div>
-      <div class="case-card-title">
+      <div class="case-card-head">
+        <span class="case-card-num">03</span>
         <span class="case-card-brand">Мотив</span>
         <span class="case-card-format">Имиджевая кампания к 30-летию</span>
+        <span class="case-card-hint">Посмотреть работу</span>
+      </div>
+      <div class="case-card-media">
+        <img src="images/case-motiv-banner.jpeg" alt="Мотив" loading="lazy">
       </div>
 
       <div class="case-card-overlay">
