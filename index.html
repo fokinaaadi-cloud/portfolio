@@ -125,36 +125,6 @@
     background: var(--text);
   }
 
-  /* ===== ПЛАВАЮЩИЕ КНОПКИ БЫСТРОГО ПЕРЕХОДА ===== */
-  .quick-nav{
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 60;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 8px;
-  }
-
-  .quick-nav-btn{
-    padding: 10px 20px;
-    border-radius: 999px;
-    background: var(--white);
-    border: 1px solid var(--idea-blue);
-    color: var(--idea-blue);
-    font-weight: 700;
-    font-size: 14px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
-    transition: all 0.2s ease;
-  }
-
-  .quick-nav-btn:hover{
-    background: var(--idea-blue);
-    color: var(--white);
-    border-color: var(--idea-blue);
-  }
-
   /* ===== ГЛАВНЫЙ ЭКРАН (HERO) ===== */
   .hero{
     min-height: calc(100vh - 84px);
@@ -261,6 +231,21 @@
 
   .case-highlight--align-start{
     align-items: start;
+  }
+
+  .case-highlight-col{
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .case-highlight-col .case-steps{
+    margin-top: 0;
+  }
+
+  .case-highlight-col .case-steps-list{
+    flex-direction: column;
+    gap: 10px;
   }
 
   .case-highlight-top{
@@ -935,8 +920,6 @@
     .footer-columns{ grid-template-columns: 1fr; }
     header .wrap{ height: 72px; padding: 0 20px; position: relative; }
     .section-title{ width: 220px; max-width: 65vw; }
-    .quick-nav{ right: 12px; bottom: 12px; gap: 6px; }
-    .quick-nav-btn{ padding: 8px 14px; font-size: 13px; }
     .coming-grid{ grid-template-columns: repeat(2, 1fr); }
 
     .hero-row{ max-width: 100%; margin-top: 8px; }
@@ -985,12 +968,6 @@
     </button>
   </div>
 </header>
-
-<!-- ===== ПЛАВАЮЩИЕ КНОПКИ БЫСТРОГО ПЕРЕХОДА ===== -->
-<div class="quick-nav">
-  <a href="#creative" class="quick-nav-btn">Креатив</a>
-  <a href="#strategy" class="quick-nav-btn">Стратегия</a>
-</div>
 
 <!-- ===== ГЛАВНЫЙ ЭКРАН ===== -->
 <section class="hero">
@@ -1512,30 +1489,32 @@
             </div>
 
             <div class="case-highlight case-highlight--align-start">
-              <div class="case-idea">
-                <span class="label">Идея</span>
-                <p>Поблагодарить абонентов с помощью 30 НиЛЕТт.</p>
-                <p class="case-idea-detail">В ролике артист сменил 30 образов и профессий, чтобы показать, насколько разные люди сделали Мотив таким, каким мы его знаем сегодня.</p>
+              <div class="case-highlight-col">
+                <div class="case-idea">
+                  <span class="label">Идея</span>
+                  <p>Поблагодарить абонентов с помощью 30 НиЛЕТт.</p>
+                  <p class="case-idea-detail">В ролике артист сменил 30 образов и профессий, чтобы показать, насколько разные люди сделали Мотив таким, каким мы его знаем сегодня.</p>
+                </div>
+
+                <div class="case-steps">
+                  <span class="label">Как проходила кампания</span>
+                  <ol class="case-steps-list">
+                    <li>
+                      <span class="case-step-title">Тизер</span>
+                      <p>Появились баннеры в стрит-арт стиле, внизу был указан только номер телефона. Позвонив, человек слышал голос Нилетто и получал личное поздравление от артиста. На 30 баннерах стоял автограф Нилетто.</p>
+                    </li>
+                    <li>
+                      <span class="case-step-title">Ролик</span>
+                      <p>Кампанию закрывал ролик, где артист поздравлял абонентов в образах 30 разных уральцев.</p>
+                    </li>
+                  </ol>
+                </div>
               </div>
 
               <div class="case-media case-media-stack">
                 <iframe src="https://www.youtube.com/embed/XokbS1i5Jck" title="Мотив — 30 ниЛЕТт" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
                 <img src="images/case-motiv-banner.jpeg" alt="Баннер «Мотив 30 ниЛЕТт» в стрит-арт стиле">
               </div>
-            </div>
-
-            <div class="case-steps">
-              <span class="label">Как проходила кампания</span>
-              <ol class="case-steps-list">
-                <li>
-                  <span class="case-step-title">Тизер</span>
-                  <p>Появились баннеры в стрит-арт стиле, внизу был указан только номер телефона. Позвонив, человек слышал голос Нилетто и получал личное поздравление от артиста. На 30 баннерах стоял автограф Нилетто.</p>
-                </li>
-                <li>
-                  <span class="case-step-title">Ролик</span>
-                  <p>Кампанию закрывал ролик, где артист поздравлял абонентов в образах 30 разных уральцев.</p>
-                </li>
-              </ol>
             </div>
 
             <div class="case-good">
