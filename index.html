@@ -351,30 +351,38 @@
     line-height: 1.25;
   }
 
-  /* ===== СЕТКА ПРЕВЬЮ-КАРТОЧЕК КЕЙСОВ (неравномерная, как в референсе) ===== */
+  /* ===== СЕТКА ПРЕВЬЮ-КАРТОЧЕК КЕЙСОВ (один ровный ряд на всю ширину экрана) ===== */
   .case-grid{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 48px 28px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    padding: 0 40px;
+  }
+
+  @media (min-width: 901px){
+    #creative .case-grid{ grid-template-columns: repeat(5, 1fr); }
+    #strategy .case-grid{ grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 900px){
+    .case-grid{ grid-template-columns: repeat(2, 1fr); padding: 0 20px; }
   }
 
   @media (max-width: 720px){
-    .case-grid{ grid-template-columns: 1fr; gap: 40px; }
-    .case-card, .case-card.case-card--lg{ grid-column: auto; }
+    .case-grid{ grid-template-columns: 1fr; gap: 40px; padding: 0 20px; }
   }
 
   .case-card{
     position: relative;
     cursor: pointer;
-    grid-column: span 1;
-  }
-
-  .case-card.case-card--lg{
-    grid-column: span 2;
   }
 
   .case-card.case-card--lg .case-card-media{
-    aspect-ratio: 16 / 10;
+    aspect-ratio: 4 / 3;
   }
 
   .case-card-head{
